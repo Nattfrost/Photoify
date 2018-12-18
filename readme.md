@@ -74,3 +74,5 @@
 * [ ] setup mediaquerys early so it's responsive from the start. // Decide what content is shown when.
 * [ ] create a main grid with names for all components of the site, which will be subgrids.
 * [ ] create subgrids.
+* [ ] Create concept for '#-filter view'.
+* [ ] Add toggle for Explore // Filtered.
