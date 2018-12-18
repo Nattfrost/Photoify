@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: body-text;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+
+#logo {
+  font-family: instagram-logo;
+  font-weight: 10;
+}
+
+.text-regular {
+  font-family: body-text;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.text-uppercase {
+  font-family: body-text;
+  text-transform: uppercase;
+  color: #9A9A9A;
+  font-size: 10px;
+}
+
+.text-small {
+  font-family: body-text;
+  font-weight: 600;
+  font-size: 12px;
+}
