@@ -2,7 +2,7 @@
  create a [Instagram](https://en.m.wikipedia.org/wiki/Instagram) clone which we call Photoify.
 
 
-##Setup
+#Setup
 * [ ] Setup file structure
 * [ ] Setup sqlite db structure.
 * [ ] look at heroku/netlify.
