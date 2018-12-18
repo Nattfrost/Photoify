@@ -70,4 +70,8 @@
 - **able to view posts with a specific [hashtag](https://en.m.wikipedia.org/wiki/Hashtag) in the description.**
 * [ ]
 
-#Front-end
+# Front-end
+* [ ] create css variables for fonts, spaces, padding/margin, and colors.
+* [ ] setup mediaquerys early so it's responsive from the start. // Decide what content is shown when.
+* [ ] create a main grid with names for all components of the site, which will be subgrids.
+* [ ] create subgrids.
