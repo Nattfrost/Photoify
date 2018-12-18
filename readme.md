@@ -12,58 +12,40 @@
 - **create an account**
 * [ ] signup form
 * [ ] save to db
-
 - **login**
 * [ ] todo
-
 - **logout**
 * [ ] todo
-
 - **edit account email, password and biography**
 * [ ] update db based on id
-
 - **upload a profile avatar image**
 * [ ] todo
-
 - **create new posts with image and description**
 * [ ] todo
-
 - **edit posts**
 * [ ] todo
-
 - **delete posts**
 * [ ] todo
-
 - **like and dislike posts**
 * [ ] todo
-
 - **follow and unfollow other users**
 * [ ] todo
-
 - **view a list of posts by users I follow**
 * [ ] todo
-
 - **able to comment on a post**
 * [ ] todo
-
 - **able to edit comments**
 * [ ] todo
-
 - **able to delete comments**
 * [ ] todo
-
 - **able to reply to comments**
 * [ ] todo
-
 - **able to add [filters](https://picturepan2githubio/instagramcss/) to images**
 * [ ] todo
-
 - **able to delete account along with all posts and comments**
 * [ ] todo
-
 - **able to resetting password with email**
 * [ ] todo
-
 - **able to view posts with a specific [hashtag](https://enmwikipediaorg/wiki/Hashtag) in the description**
 * [ ] todo
 
