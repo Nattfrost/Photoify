@@ -68,7 +68,9 @@
 * [ ]
 
 # Front-end
-* [x] Mockup/Wireframing.
+* [] Mockup/Wireframing.
+			* [ ] Basic layout.
+			* [x] Decide on fonts.
 * [ ] Decide on frameworks.
 * [ ] create css variables for fonts, spaces, padding/margin, and colors.
 * [ ] setup mediaquerys early so it's responsive from the start. // Decide what content is shown when.
