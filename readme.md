@@ -68,7 +68,7 @@
 * [ ]
 
 # Front-end
-* [] Mockup/Wireframing.
+* [ ] Mockup/Wireframing.
 			* [ ] Basic layout.
 			* [x] Decide on fonts.
 * [ ] Decide on frameworks.
