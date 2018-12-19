@@ -27,10 +27,10 @@
 * [ ] able to edit comments
 * [ ] able to delete comments
 * [ ] able to reply to comments
-* [ ] able to add [filters](https://picturepan2githubio/instagramcss/) to images
+* [ ] able to add [filters](https://picturepan2.github.io/instagram.css/) to images
 * [ ] able to delete account along with all posts and comments
 * [ ] able to resetting password with email
-* [ ] able to view posts with a specific [hashtag](https://enmwikipediaorg/wiki/Hashtag) in the description
+* [ ] able to view posts with a specific **hashtag** in the description
 
 # Front-end
 * [x] Wireframes  
