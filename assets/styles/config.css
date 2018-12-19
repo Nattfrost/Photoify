@@ -9,7 +9,22 @@
 
 
 /* create pallet here */
+:root {
+  --bg: whitesmoke;
+  --highlight: whitesmoke;
+  --success: whitesmoke;
+  --failure: whitesmoke;
+  --highlight: whitesmoke;
+  --text: whitesmoke;
+  --text-faded: whitesmoke;
 
+		--transition-slow: .8s;
+		--transition-fast: .4s;
+
+		--text-size-small: 8px;
+		--text-size-medium: 10px;
+		--text-size-large: 12px;
+}
 
 
 
