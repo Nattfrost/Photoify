@@ -11,6 +11,7 @@ require __DIR__.'/../app/autoload.php';
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../assets/styles/config.css">
   <link rel="stylesheet" href="../assets/styles/main.css">
+  <link rel="stylesheet" href="../assets/styles/register.css">
   <link rel="stylesheet" href="../assets/styles/header.css">
   <link rel="stylesheet" href="../assets/styles/tablet.css">
   <link rel="stylesheet" href="../assets/styles/mobile.css">

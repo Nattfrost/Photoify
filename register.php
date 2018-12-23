@@ -1,10 +1,15 @@
 <?php declare(strict_types=1); ?>
 
+<div class="form-container">
 
-<form class="register-form" action="register.php" method="post">
-	<input type="text" name="firstname" value="" placeholder="firstname" required>
-	<input type="text" name="lastname" value="" placeholder="lastname" required>
-	<input type="text" name="email" value="" placeholder="email" required>
-	<input type="text" name="password" value="" placeholder="password" required>
-	<input type="text" name="confirmpassword" value="" placeholder="confirmpassword" required>
+
+<form class="register-form" action="app/users/register.php" method="post">
+	<input type="text" name="firstname"  placeholder="firstname" required>
+	<input type="text" name="lastname"  placeholder="lastname" required>
+	<input type="text" name="username"  placeholder="username" required>
+	<input type="email" name="email"  placeholder="email" required>
+	<input type="password" name="password"  placeholder="password" required>
+	<input type="password" name="confirmpassword"  placeholder="confirmpassword" required>
+	<button type="submit" name="button">sign up!</button>
 </form>
+</div>
