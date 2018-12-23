@@ -9,11 +9,11 @@
 
 # Back-end
 
-* [ ] create an account
-  * [ ] signup form
-  * [ ] save to db
-* [ ] login
-* [ ] logout
+* [X] create an account
+  * [X] signup form
+  * [X] save to db
+* [x] login
+* [X] logout
 * [ ] edit account email, password and biography
   * [ ] update db based on id
 * [ ] upload a profile avatar image
