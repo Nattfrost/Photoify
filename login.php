@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 ?>
 <form class="login-form" action="app/users/login.php" method="post">
 	<input type="text" name="username" placeholder="username">

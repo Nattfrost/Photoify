@@ -2,6 +2,7 @@
 <?php
 // Always start by loading the default application setup.
 require __DIR__.'/../app/autoload.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@ require __DIR__.'/../app/autoload.php';
   <link rel="stylesheet" href="../assets/styles/tablet.css">
   <link rel="stylesheet" href="../assets/styles/mobile.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.css">
-  <title>Photoify</title>
+  <title><?= $config['title'] ?></title>
 </head>
 <body>
 

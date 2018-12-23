@@ -3,8 +3,7 @@
 
 
 ## Setup
-* [ ] Setup file structure
-* [ ] Setup sqlite db structure
+* [X] Setup file structure
 * [ ] look at heroku/netlify
 
 # Back-end
@@ -12,7 +11,7 @@
 * [X] create an account
   * [X] signup form
   * [X] save to db
-* [x] login
+* [X] login
 * [X] logout
 * [ ] edit account email, password and biography
   * [ ] update db based on id
