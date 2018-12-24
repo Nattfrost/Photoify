@@ -17,7 +17,7 @@ if(isset($_POST['password'])) {
 	$password = $_POST['password'];
 	$errors = [];
 
-	if($image['size'] >= 4195000) {
+	if($image['size'] >= 4194304) {
 		$errors[] = $image['name'] . ' Is too big, please choose an image that\'s smaller than 4mb';
 	}
 
