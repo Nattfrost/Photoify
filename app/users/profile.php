@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 require __DIR__.'/../autoload.php';
-die(var_dump($_SESSION['user']));
+// die(var_dump($_SESSION['user']));
 
 $id = (int) $_SESSION['user']['id'];
 $statement = $pdo->prepare('SELECT * FROM users WHERE id = :user_id');
@@ -12,7 +12,8 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 // POST ROUTE TO PROFILE
 if(isset($_POST['password'])) {
-	$name = ($_POST['name']) ? trim(filter_var($_POST['name'], FILTER_SANITIZE_STRING)) : $user['name'];
+	$firstname = ($_POST['firstname']) ? trim(filter_var($_POST['firstname'], FILTER_SANITIZE_STRING)) : $user['first_name'];
+	$lastname = ($_POST['lastname']) ? trim(filter_var($_POST['lastname'], FILTER_SANITIZE_STRING)) : $$user['last_name'];
 	$username = ($_POST['username']) ? trim(filter_var($_POST['username'] , FILTER_SANITIZE_STRING)) : $user['username'];
 	$image = ($_FILES['image']) ? $_FILES['image'] : $user['avatar'];
 	$desc = ($_POST['description']) ? trim(filter_var($_POST['description'], FILTER_SANITIZE_STRING)) : $user['description'];
@@ -43,12 +44,13 @@ if(isset($_POST['password'])) {
 	// Set the $destination variable to be stored in the DB.
 	$destination = '/app/uploads/' . $_SESSION['user']['id'] . '/profile_pictures/' . time() . '-' . $image['name'];
 
-	$statement = $pdo->prepare('UPDATE users SET name = :name, username = :username, description = :description, avatar = :avatar WHERE id = :user_id');
+	$statement = $pdo->prepare('UPDATE users SET first_name = :firstname, last_name = :lastname, username = :username, description = :description, avatar = :avatar WHERE id = :user_id');
 	if(!$statement) {
 		die(var_dump($pdo->errorInfo()));
 	}
 	$statement->bindParam(':user_id', $id, PDO::PARAM_INT);
-	$statement->bindParam(':name', $name, PDO::PARAM_STR);
+	$statement->bindParam(':firstname', $firstname, PDO::PARAM_STR);
+	$statement->bindParam(':lastname', $lastname, PDO::PARAM_STR);
 	$statement->bindParam(':username', $username, PDO::PARAM_STR);
 	$statement->bindParam(':description', $desc, PDO::PARAM_STR);
 	$statement->bindParam(':avatar', $destination, PDO::PARAM_STR);

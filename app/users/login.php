@@ -13,8 +13,8 @@ if (isset($_POST['username'], $_POST['password'])) {
     $statement = $pdo->prepare('SELECT * FROM users WHERE username = :username');
     $statement->bindParam(':username', $username, PDO::PARAM_STR);
     $statement->execute();
-    $users = $statement->fetch(PDO::FETCH_ASSOC);
-    $dbPassword = $users['password'];
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+    $dbPassword = $user['password'];
 
     // checks if given password is equal to password in db
     if (password_verify($password, $dbPassword))
@@ -24,7 +24,9 @@ if (isset($_POST['username'], $_POST['password'])) {
             'name' => $user['first_name'],
             'username' => $user['username'],
 			'email' => $user['email'],
-			'password' => $user['password']
+			'password' => $user['password'],
+			'avatar' => $user['avatar'],
+			'description' => $user['description']
         ];
         redirect('/index.php');
 

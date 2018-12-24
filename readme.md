@@ -13,7 +13,8 @@
   * [X] save to db
 * [X] login
 * [X] logout
-* [ ] edit account email, password and biography
+* [X] edit account details, password and biography
+  * [ ] change email (not yet made verification)
   * [ ] update db based on id
 * [ ] upload a profile avatar image
 * [ ] create new posts with image and description

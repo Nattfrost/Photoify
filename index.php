@@ -3,5 +3,9 @@
 <!--  TODO implement if statement for checking if USER session is active and require-->
 <?php if (!isset($_SESSION['user'])): ?>
 <?php redirect('/login.php'); ?>
+
+<?php endif; ?>
+<?php if (isset($_SESSION['user'])): ?>
+	<p>Welcome, <?php echo var_dump($_SESSION)?>!</p>
 <?php endif; ?>
 <?php require __DIR__.'/views/footer.php'; ?>
