@@ -7,16 +7,15 @@
 * [ ] look at heroku/netlify
 
 # Back-end
-
 * [X] create an account
   * [X] signup form
   * [X] save to db
 * [X] login
 * [X] logout
+* [X] upload a profile avatar image
 * [X] edit account details, password and biography
   * [ ] change email (not yet made verification)
   * [ ] update db based on id
-* [ ] upload a profile avatar image
 * [ ] create new posts with image and description
 * [ ] edit posts
 * [ ] delete posts
