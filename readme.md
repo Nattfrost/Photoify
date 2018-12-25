@@ -15,7 +15,6 @@
 * [X] upload a profile avatar image
 * [X] edit account details, password and biography
   * [ ] change email (not yet made verification)
-  * [ ] update db based on id
 * [ ] create new posts with image and description
 * [ ] edit posts
 * [ ] delete posts
@@ -38,8 +37,6 @@
 * [ ] Decide on frameworks
 * [ ] create css variables for fonts, spaces, padding/margin, and colors
 * [ ] setup mediaquerys early so it's responsive from the start // Decide what content is shown when
-* [ ] create a main grid with names for all components of the site, which will be subgrids
-* [ ] create subgrids
+* [ ] create grid with names for all components of the site, which will be subgrids
 * [ ] Create concept for '#-filter view'
-* [ ] Add toggle for Explore // Filtered
 * [ ] Add toggle for Explore // Filtered
