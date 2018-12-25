@@ -31,11 +31,11 @@
 * [ ] able to view posts with a specific **hashtag** in the description
 
 # Front-end
-* [x] Wireframes  
+* [x] wireframes
   * [x] choose fonts  
   * [ ] basic layout in figma  
-* [ ] Decide on frameworks
+* [ ] decide on frameworks
 * [ ] create css variables for fonts, spaces, padding/margin, and colors
 * [ ] setup mediaquerys early so it's responsive from the start // Decide what content is shown when
-* [ ] Create concept for '#-filter view'
-* [ ] Add toggle for Explore // Filtered
+* [ ] create concept for '#-filter view'
+* [ ] add toggle for Explore // Filtered
