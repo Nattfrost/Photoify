@@ -37,6 +37,5 @@
 * [ ] Decide on frameworks
 * [ ] create css variables for fonts, spaces, padding/margin, and colors
 * [ ] setup mediaquerys early so it's responsive from the start // Decide what content is shown when
-* [ ] create grid with names for all components of the site, which will be subgrids
 * [ ] Create concept for '#-filter view'
 * [ ] Add toggle for Explore // Filtered
