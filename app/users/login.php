@@ -14,7 +14,8 @@ if (isset($_POST['username'], $_POST['password'])) {
 	if (password_verify($password, $dbPassword)) {
 		$_SESSION['user'] = [
 			'id' 		=> $user['id'],
-			'name' 		=> $user['first_name'],
+			'firstname' 		=> $user['first_name'],
+			'lastname' 		=> $user['last_name'],
 			'username' 	=> $user['username'],
 			'email' 	=> $user['email'],
 			'password' 	=> $user['password'],
