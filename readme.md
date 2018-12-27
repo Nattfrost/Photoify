@@ -16,7 +16,9 @@
 * [X] edit account details, password and biography
   * [X] change email
   * [X] check if email is taken
+* [ ] create a database function file with all sql commands
 * [ ] create new posts with image and description
+* [ ] rewrite verifyEmail to be dynamic with any value
 * [ ] edit posts
 * [ ] delete posts
 * [ ] like and dislike posts
