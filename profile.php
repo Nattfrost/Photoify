@@ -20,3 +20,8 @@ require __DIR__.'/navbar.php';
 		<button type="submit" class="">Update profile</button>
 	</div>
 </form>
+
+<?php
+require __DIR__.'/views/footer.php';
+require __DIR__.'/footer.php';
+?>

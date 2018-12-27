@@ -1,4 +1,10 @@
-.header {
+.footer-nav-container{
+	position: fixed;
+	bottom: 0;
+}
+
+
+.header, .footer-nav-container {
 	background-color: whitesmoke;
 	z-index: 1;
 	width: 100vw;

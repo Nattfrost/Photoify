@@ -1,9 +1,8 @@
 <?php
 declare(strict_types=1);
 require __DIR__.'/views/header.php';
-
 require __DIR__.'/navbar.php';
-
+require __DIR__.'/views/footer.php';
 
 ?>
 <form class="login-form" action="app/users/login.php" method="post">
