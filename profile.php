@@ -5,9 +5,9 @@ if (!isset($_SESSION['user'])){
 	redirect('/login.php');
 };
 require __DIR__.'/navbar.php';
-require __DIR__.'/views/header.php';
+// require __DIR__.'/views/header.php';
 
-var_dump( $_SESSION['user'])
+// var_dump( $_SESSION['user'])
 
 ?>
 

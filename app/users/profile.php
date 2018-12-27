@@ -10,7 +10,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 if(isset($_POST['password'])) {
 	$firstname = ($_POST['firstname']) ? trim(filter_var($_POST['firstname'], FILTER_SANITIZE_STRING)) : $user['first_name'];
-	$lastname = ($_POST['lastname']) ? trim(filter_var($_POST['lastname'], FILTER_SANITIZE_STRING)) : $$user['last_name'];
+	$lastname = ($_POST['lastname']) ? trim(filter_var($_POST['lastname'], FILTER_SANITIZE_STRING)) : $user['last_name'];
 	$username = ($_POST['username']) ? trim(filter_var($_POST['username'] , FILTER_SANITIZE_STRING)) : $user['username'];
 	$image = ($_FILES['image']) ? $_FILES['image'] : $user['avatar'];
 	$description = ($_POST['description']) ? trim(filter_var($_POST['description'], FILTER_SANITIZE_STRING)) : $user['description'];
@@ -28,6 +28,12 @@ if(isset($_POST['password'])) {
 	if (!file_exists(__DIR__ .'/../uploads/' . $_SESSION['user']['id'] . '/profile_pictures/')) {
 		mkdir(__DIR__ .'/../uploads/' . $_SESSION['user']['id'] . '/profile_pictures/', 0777, true);
 	}
+
+	if(count($errors) > 0) {
+      $_SESSION['errors'] = $errors;
+      print_r($errors);
+      exit;
+    }
 
 	$destination = '/../uploads/' . $_SESSION['user']['id'] . '/profile_pictures/' . time() . '-' . $image['name'];
 	move_uploaded_file($image['tmp_name'], __DIR__.$destination);
