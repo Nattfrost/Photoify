@@ -19,8 +19,6 @@
 
 	<div class="settings-menu">
 
-		<a href="app/users/logout.php">logout</a>
-		<a href="app/users/profile.php">profile</a>
 	</div>
 <h1 class="logo-text">Photoify</h1>
 </div>

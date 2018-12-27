@@ -6,6 +6,7 @@
 
 <?php endif; ?>
 <?php if (isset($_SESSION['user'])): ?>
-	<p>Welcome, <?php echo var_dump($_SESSION)?>!</p>
+	<p>Welcome, <?php echo $_SESSION['user']['name']?>!</p>
 <?php endif; ?>
 <?php require __DIR__.'/views/footer.php'; ?>
+<?php require __DIR__.'/footer.php'; ?>

@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
-$current_page = 'Register'
+require __DIR__.'/views/header.php';
+require __DIR__.'/navbar.php';
 ?>
 
 <div class="form-container">
