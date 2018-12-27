@@ -1,6 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
+
+
 require __DIR__.'/../autoload.php';
 $id = (int) $_SESSION['user']['id'];
 $statement = $pdo->prepare('SELECT * FROM users WHERE id = :user_id');
@@ -29,6 +32,10 @@ if(isset($_POST['password'])) {
 		mkdir(__DIR__ .'/../uploads/' . $_SESSION['user']['id'] . '/profile_pictures/', 0777, true);
 	}
 
+	if (verifyEmail($email, $pdo)){
+	$errors[] = 'Email is taken';
+	};
+
 	if(count($errors) > 0) {
       $_SESSION['errors'] = $errors;
       print_r($errors);
@@ -38,12 +45,6 @@ if(isset($_POST['password'])) {
 	$destination = '/../uploads/' . $_SESSION['user']['id'] . '/profile_pictures/' . time() . '-' . $image['name'];
 	move_uploaded_file($image['tmp_name'], __DIR__.$destination);
 	$destination = '/app/uploads/' . $_SESSION['user']['id'] . '/profile_pictures/' . time() . '-' . $image['name'];
-
-
-//Check if Email already exists
-if (condition) {
-	// code...
-}
 
 
 	$statement = $pdo->prepare('UPDATE users SET first_name = :firstname, last_name = :lastname, username = :username, email = :email, description = :description, avatar = :avatar WHERE id = :user_id');
@@ -63,4 +64,5 @@ if (condition) {
 		die(var_dump($statement->errorInfo()));
 	}
 }
-redirect('/profile.php');
+
+redirect('logout.php');

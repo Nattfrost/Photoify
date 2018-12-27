@@ -12,15 +12,15 @@ if (isset($_POST['username'], $_POST['password'])) {
 	$dbPassword = $user['password'];
 
 	if (password_verify($password, $dbPassword)) {
-		$_SESSION['user'] = [
+			$_SESSION['user'] = [
 			'id' 		=> $user['id'],
-			'firstname' 		=> $user['first_name'],
-			'lastname' 		=> $user['last_name'],
+			'firstname' => $user['first_name'],
+			'lastname' 	=> $user['last_name'],
 			'username' 	=> $user['username'],
 			'email' 	=> $user['email'],
 			'password' 	=> $user['password'],
 			'avatar' 	=> $user['avatar'],
-		 'description' => $user['description']
+			'description' => $user['description']
 		];
 		redirect('/index.php');
 	}	else {

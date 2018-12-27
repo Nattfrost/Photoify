@@ -14,7 +14,8 @@
 * [X] logout
 * [X] upload a profile avatar image
 * [X] edit account details, password and biography
-  * [ ] change email (not yet made verification)
+  * [X] change email
+  * [X] check if email is taken
 * [ ] create new posts with image and description
 * [ ] edit posts
 * [ ] delete posts
@@ -34,7 +35,6 @@
 * [x] wireframes
   * [x] choose fonts  
   * [x] basic layout in figma  
-* [x] decide on frameworks
 * [ ] create css variables for fonts, spaces, padding/margin, and colors
 * [ ] setup mediaquerys early so it's responsive from the start // Decide what content is shown when
 * [ ] create concept for '#-filter view'
