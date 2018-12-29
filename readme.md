@@ -17,8 +17,8 @@
   * [X] change email
   * [X] check if email is taken
 * [ ] encode all post data to json
-  * [] fetch the Json in js
-  * [] 
+  * [ ] fetch the Json in js
+  * [ ]
 * [ ] create a database function file with all sql commands
 * [ ] create new posts with image and description
 * [ ] rewrite verifyEmail to be dynamic with any value
