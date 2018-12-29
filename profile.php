@@ -9,7 +9,7 @@ require __DIR__.'/navbar.php';
 
 
 <form action="/app/users/profile.php" method="POST" enctype="multipart/form-data" class="update-form">
-	<img class="avatar" src="<?= $_SESSION['user']['avatar'];?>" alt="">
+	<img class="avatar" src="<?= $_SESSION['user']['avatar']; ?>" alt="">
 	<div class="">
 		<input type="text" name="firstname" id="firstname" value="<?= $_SESSION['user']['firstname']?>" >
 		<input type="text" name="lastname" id="lastname" value="<?= $_SESSION['user']['lastname']?>">

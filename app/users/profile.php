@@ -33,7 +33,11 @@ if(isset($_POST['password'])) {
 	}
 
 	if (verifyEmail($email, $pdo)){
+		if ($email === $_SESSION['user']['email']) {
+			// code...
+		} else {
 	$errors[] = 'Email is taken';
+		}
 	};
 
 	if(count($errors) > 0) {
