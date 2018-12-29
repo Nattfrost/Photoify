@@ -5,4 +5,5 @@
 			<a href="search.php">search .</a>
 			<a href="followers.php">followers .</a>
 			<a href="profile.php">profile .</a>
+			<a href="post.php">new post .</a>
 </div>
