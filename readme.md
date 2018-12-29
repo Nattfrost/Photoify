@@ -16,13 +16,13 @@
 * [X] edit account details, password and biography
   * [X] change email
   * [X] check if email is taken
-* [ ] encode all post data to json
-  * [ ] fetch the Json in js
-* [ ] create a database function file with all sql commands
+		* [ ] rewrite verifyEmail to be dynamic with any value
 * [ ] create new posts with image and description
-* [ ] rewrite verifyEmail to be dynamic with any value
-* [ ] edit posts
-* [ ] delete posts
+		* [ ] edit posts
+		* [ ] delete posts
+				* [ ] encode all post data to json
+		  * [ ] fetch the Json in js
+* [ ] create a database function file with all sql commands
 * [ ] like and dislike posts
 * [ ] follow and unfollow other users
 * [ ] view a list of posts by users I follow
