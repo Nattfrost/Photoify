@@ -25,6 +25,14 @@ function verifyEmail(string $email, $pdo) {
 	return $user;
 };
 
+
+function getPosts($image, $pdo) {
+	$statement = $pdo->prepare('SELECT * FROM posts WHERE');
+	$statement->bindParam(':image', $image, PDO::PARAM_STR);
+	$statement->execute();
+	$posts = $statement->fetch(PDO::FETCH_ASSOC);
+	return $posts;
+}
 //
 //
 // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
