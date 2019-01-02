@@ -26,6 +26,7 @@ if(isset($_FILES['image'])) {
 	if (!file_exists(__DIR__ .'/../uploads/' . $_SESSION['user']['id'] . '/posts/')) {
 		mkdir(__DIR__ .'/../uploads/' . $_SESSION['user']['id'] . '/posts/', 0777, true);
 	}
+
 	$destination = '/../uploads/' . $_SESSION['user']['id']  . '/posts/' . time() . '-' . $image['name'];
 	move_uploaded_file($image['tmp_name'], __DIR__.$destination);
 	$destination = '/app/uploads/' . $_SESSION['user']['id'] . '/posts/' . time() . '-' . $image['name'];
@@ -42,5 +43,5 @@ if(isset($_FILES['image'])) {
 	if(!$statement){
 		die(var_dump($statement->errorInfo()));
 	}
-	die(var_dump(getPosts($image, $pdo)));
+
 }

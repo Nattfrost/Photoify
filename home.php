@@ -7,3 +7,7 @@ require __DIR__.'/footer.php';
 ?>
 
 <h1>home</h1>
+<?php $posts = getPosts($_SESSION['user']['id'], $pdo)?>
+<?php foreach ($posts as $post): ?>
+<img src="<?= $post['image'] ?>" alt="">
+<?php endforeach; ?>
