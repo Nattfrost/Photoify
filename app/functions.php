@@ -28,6 +28,9 @@ function getPosts($image, $pdo) {
 	$statement = $pdo->prepare("SELECT image FROM posts");
 	$statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+	$cookieData = json_encode($posts);
+	$cookieName = "posts";
+	setcookie($cookieName, $cookieData);
 	return $posts;
 }
 
@@ -36,5 +39,7 @@ function getUserPosts( $id, $pdo) {
 	$statement->bindParam(':user_id', $id, PDO::PARAM_STR);
 	$statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+	$cookieData = json_encode($posts);
+	$cookieName = "posts";
 	return $posts;
 }
