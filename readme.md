@@ -17,6 +17,7 @@
   * [X] change email
   * [X] check if email is taken
   * [ ] rewrite verifyEmail to be dynamic with any value
+* [X] Added feed and user images
 * [X] create new posts with image and description
   * [ ] edit posts
   * [ ] delete posts
