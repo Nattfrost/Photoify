@@ -1,5 +1,6 @@
 # Photoify
- create a [Instagram](https://enmwikipediaorg/wiki/Instagram) clone which we call Photoify
+ > create a [Instagram](https://enmwikipediaorg/wiki/Instagram) clone which we call Photoify
+
 
 
 ## Setup
