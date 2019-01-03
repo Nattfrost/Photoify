@@ -18,4 +18,6 @@ function getCookie(cname) {
 }
 
 
-console.log(getCookie(cname))
+const posts = JSON.parse(getCookie(cname))
+
+console.table(posts)
