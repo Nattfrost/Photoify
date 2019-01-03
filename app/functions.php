@@ -34,12 +34,13 @@ function getPosts($image, $pdo) {
 	return $posts;
 }
 
-function getUserPosts( $id, $pdo) {
+function getUserPosts($id, $pdo) {
 	$statement = $pdo->prepare("SELECT * FROM posts WHERE user_id= :user_id");
 	$statement->bindParam(':user_id', $id, PDO::PARAM_STR);
 	$statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 	$cookieData = json_encode($posts);
-	$cookieName = "posts";
+	$cookieName = "userPosts";
+	setcookie($cookieName, $cookieData);
 	return $posts;
 }

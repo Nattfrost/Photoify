@@ -1,8 +1,7 @@
 
-let cname = 'posts'
-
-function getCookie(cname) {
-  var name = cname + "=";
+//thank you stackoverflow :)
+function getCookie(cookieName) {
+  var name = cookieName + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
   for(var i = 0; i <ca.length; i++) {
@@ -17,7 +16,9 @@ function getCookie(cname) {
   return "";
 }
 
+const posts = JSON.parse(getCookie('posts'))
+const userPosts = JSON.parse(getCookie('userPosts'))
 
-const posts = JSON.parse(getCookie(cname))
 
 console.table(posts)
+console.table(userPosts)
