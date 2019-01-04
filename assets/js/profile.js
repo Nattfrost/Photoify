@@ -13,7 +13,7 @@ const createPost = (json) => {
 	<p>${post.description}</p>
 	<p>${post.created_at}</p>
 	<form class="likes-form" action="../app/posts/likes.php" target="hiddenFrame" method="post">
-	<button name="like" type="submit" data-id="${post.id}" class="like">like</button>
+	<button name="like" type="submit" data-id="${post.post_id}" class="like">like</button>
 	<p>${post.no_likes}</p>
 	</form>
 	</section>
@@ -30,8 +30,7 @@ const initEventListeners = (elts) => {
 }
 
 const handleClick = (event) => {
-postId = event.target.dataset.id
-console.log(postId);
+let postId = event.target.dataset.id
 document.cookie = "like="+postId;
 }
 
