@@ -1,14 +1,45 @@
-const userPosts = JSON.parse(getCookie('userPosts'))
+url = 'http://localhost:8888/app/posts/api.php'
 const container = document.querySelector('.posts-container')
-console.table(userPosts)
+
+const createPost = (json) => {
+	json.forEach((post) => {
 
 
-userPosts.forEach((post) => {
 	container.innerHTML += `
-	<section class="user-item">
-	<img class="user-image" src="${post.image}"/>
+	<img class="avatar" src="${post.avatar}">
+	<p>${post.username}</p>
+	<section class="feed-item">
+	<img class="feed-image" src="${post.image}"/>
 	<p>${post.description}</p>
 	<p>${post.created_at}</p>
+	<form class="likes-form" action="../app/posts/likes.php" target="hiddenFrame" method="post">
+	<button name="like" type="submit" data-id="${post.id}" class="like">like</button>
+	<p>${post.no_likes}</p>
+	</form>
 	</section>
 	`
 	})
+}
+const handleLikes = (e) => {
+
+}
+const initEventListeners = (elts) => {
+	elts.forEach(el => {
+		el.addEventListener('click', handleClick)
+	})
+}
+
+const handleClick = (event) => {
+postId = event.target.dataset.id
+console.log(postId);
+document.cookie = "like="+postId;
+}
+
+fetch(url)
+  .then((resp) => resp.json())
+  .then((data) => {
+			console.table(data)
+   createPost(data)
+			const buttons = document.querySelectorAll('.like')
+			initEventListeners(buttons);
+  })

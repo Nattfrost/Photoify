@@ -10,6 +10,7 @@ require __DIR__.'/footer.php';
 <div class="posts-container">
 
 </div>
+<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
 <script type="text/javascript" src="assets/js/home.js">
 
 </script>

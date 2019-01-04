@@ -16,7 +16,7 @@ if(isset($_POST['password'])) {
 	$username = ($_POST['username']) ? trim(filter_var($_POST['username'] , FILTER_SANITIZE_STRING)) : $user['username'];
 	$email = ($_POST['email']) ? trim(filter_var($_POST['email'] , FILTER_SANITIZE_EMAIL)) : $user['email'];
 	$image = ($_FILES['image']) ? $_FILES['image'] : $user['avatar'];
-	$description = ($_POST['description']) ? trim(filter_var($_POST['description'], FILTER_SANITIZE_STRING)) : $user['description'];
+	$bio = ($_POST['bio']) ? trim(filter_var($_POST['bio'], FILTER_SANITIZE_STRING)) : $user['bio'];
 	$password = $_POST['password'];
 	$errors = [];
 
@@ -51,7 +51,7 @@ if(isset($_POST['password'])) {
 	$destination = '/app/uploads/' . $_SESSION['user']['id'] . '/profile_pictures/' . time() . '-' . $image['name'];
 
 
-	$statement = $pdo->prepare('UPDATE users SET first_name = :firstname, last_name = :lastname, username = :username, email = :email, description = :description, avatar = :avatar WHERE id = :user_id');
+	$statement = $pdo->prepare('UPDATE users SET first_name = :firstname, last_name = :lastname, username = :username, email = :email, bio = :bio, avatar = :avatar WHERE id = :user_id');
 	if(!$statement) {
 		die(var_dump($pdo->errorInfo()));
 	}
@@ -60,7 +60,7 @@ if(isset($_POST['password'])) {
 	$statement->bindParam(':lastname', $lastname, PDO::PARAM_STR);
 	$statement->bindParam(':username', $username, PDO::PARAM_STR);
 	$statement->bindParam(':email', $email, PDO::PARAM_STR);
-	$statement->bindParam(':description', $description, PDO::PARAM_STR);
+	$statement->bindParam(':bio', $bio, PDO::PARAM_STR);
 	$statement->bindParam(':avatar', $destination, PDO::PARAM_STR);
 	$statement->execute();
 
