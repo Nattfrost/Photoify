@@ -43,5 +43,5 @@ if(isset($_FILES['image'])) {
 	if(!$statement){
 		die(var_dump($statement->errorInfo()));
 	}
-
+redirect('/');
 }

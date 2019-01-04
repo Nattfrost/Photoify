@@ -35,9 +35,16 @@
   font-weight: 600;
   font-size: 12px;
 }
+
 .feed-image, .user-image{
 width: 100%;
 }
+
 .feed-item, .user-item{
 height: 80vh;
+border: solid grey 1px;
+}
+
+.posts-container {
+	margin-bottom: 10vh;
 }

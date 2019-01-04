@@ -1,6 +1,6 @@
 const posts = JSON.parse(getCookie('posts'))
 const container = document.querySelector('.posts-container')
-console.log(posts)
+console.table(posts)
 
 
 posts.forEach((post) => {

@@ -24,7 +24,7 @@ function verifyEmail(string $email, $pdo) {
 };
 
 function getPosts($pdo) {
-	$statement = $pdo->prepare("SELECT * FROM posts");
+	$statement = $pdo->prepare("SELECT * FROM posts, users WHERE users.id = posts.user_id ORDER BY timestamp DESC");
 	$statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 	$cookieData = json_encode($posts);
@@ -34,7 +34,7 @@ function getPosts($pdo) {
 }
 
 function getUserPosts($id, $pdo) {
-	$statement = $pdo->prepare("SELECT * FROM posts WHERE user_id= :user_id");
+	$statement = $pdo->prepare("SELECT * FROM posts WHERE user_id= :user_id ORDER BY timestamp DESC");
 	$statement->bindParam(':user_id', $id, PDO::PARAM_STR);
 	$statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
