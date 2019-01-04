@@ -8,6 +8,10 @@ require __DIR__.'/footer.php';
 
 <h1>home</h1>
 <?php $posts = getPosts($pdo)?>
-<?php foreach ($posts as $post): ?>
-<img src="<?= $post['image'] ?>" alt="">
-<?php endforeach; ?>
+
+<div class="posts-container">
+
+</div>
+<script type="text/javascript" src="assets/js/home.js">
+
+</script>

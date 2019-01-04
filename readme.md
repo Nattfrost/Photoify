@@ -38,9 +38,9 @@
 * [ ] able to view posts with a specific **hashtag** in the description
 
 # Front-end
-* [x] wireframes
-  * [x] choose fonts  
-  * [x] basic layout in figma  
+* [X] wireframes
+  * [X] choose fonts  
+  * [X] basic layout in figma  
 * [ ] create css variables for fonts, spaces, padding/margin, and colors
 * [ ] setup mediaquerys early so it's responsive from the start // Decide what content is shown when
 * [ ] create concept for '#-filter view'

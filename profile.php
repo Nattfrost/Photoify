@@ -27,6 +27,10 @@ require __DIR__.'/views/footer.php';
 require __DIR__.'/footer.php';
 ?>
 <?php $posts = getUserPosts($_SESSION['user']['id'], $pdo)?>
-<?php foreach ($posts as $post): ?>
-<img src="<?= $post['image'] ?>" alt="">
-<?php endforeach; ?>
+<div class="posts-container">
+
+</div>
+
+<script type="text/javascript" src="assets/js/profile.js">
+
+</script>

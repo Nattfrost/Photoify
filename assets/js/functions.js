@@ -14,9 +14,3 @@ function getCookie(cookieName) {
   }
   return ""
 }
-
-const posts = JSON.parse(getCookie('posts'))
-const userPosts = JSON.parse(getCookie('userPosts'))
-
-console.table(posts)
-console.table(userPosts)
