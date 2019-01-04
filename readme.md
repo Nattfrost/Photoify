@@ -22,8 +22,8 @@
 * [X] create new posts with image and description
   * [ ] edit posts
   * [ ] delete posts
-    * [ ] encode all post data to json
-    * [ ] fetch the Json in js
+    * [X] encode all post data to json
+    * [X] fetch the Json in js
 * [ ] create a database function file with all sql commands
 * [ ] like and dislike posts
 * [ ] follow and unfollow other users

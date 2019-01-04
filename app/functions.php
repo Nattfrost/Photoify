@@ -24,8 +24,8 @@ function verifyEmail(string $email, $pdo) {
 	return $user;
 };
 
-function getPosts($image, $pdo) {
-	$statement = $pdo->prepare("SELECT image FROM posts");
+function getPosts($pdo) {
+	$statement = $pdo->prepare("SELECT * FROM posts");
 	$statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 	$cookieData = json_encode($posts);
