@@ -16,7 +16,6 @@ if (!function_exists('redirect')) {
 }
 //change email to dynamic value param so we can check any key
 function verifyEmail(string $email, $pdo) {
-
 	$statement = $pdo->prepare("SELECT * FROM users WHERE email= :email");
 	$statement->bindParam(':email', $email, PDO::PARAM_STR);
 	$statement->execute();

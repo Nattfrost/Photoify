@@ -1,9 +1,9 @@
 const posts = JSON.parse(getCookie('posts'))
 const container = document.querySelector('.posts-container')
-console.table(posts)
+console.log(posts)
 
 
-posts.forEach((post, i) => {
+posts.forEach((post) => {
 container.innerHTML += `
 <section class="feed-item">
 <img class="feed-image" src="${post.image}"/>

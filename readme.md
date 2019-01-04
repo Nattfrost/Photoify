@@ -24,6 +24,8 @@
   * [ ] delete posts
     * [X] encode all post data to json
     * [X] fetch the Json in js
+* [ ] join user data with like and post data
+  * [ ] fetch into JS and present in same template literal.
 * [ ] create a database function file with all sql commands
 * [ ] like and dislike posts
 * [ ] follow and unfollow other users

@@ -3,7 +3,7 @@ const container = document.querySelector('.posts-container')
 console.table(userPosts)
 
 
-userPosts.forEach((post, i) => {
+userPosts.forEach((post) => {
 	container.innerHTML += `
 	<section class="user-item">
 	<img class="user-image" src="${post.image}"/>

@@ -5,7 +5,7 @@ require __DIR__.'/navbar.php';
 require __DIR__.'/views/footer.php';
 require __DIR__.'/footer.php';
 ?>
-<?php $posts = getPosts($pdo)?>
+<?php getPosts($pdo)?>
 
 <div class="posts-container">
 
