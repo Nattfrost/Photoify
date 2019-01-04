@@ -35,6 +35,9 @@
   font-weight: 600;
   font-size: 12px;
 }
-.login-form{
-
+.feed-image, .user-image{
+width: 100%;
+}
+.feed-item, .user-item{
+height: 80vh;
 }

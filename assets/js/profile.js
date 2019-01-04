@@ -1,10 +1,14 @@
-console.log('profile')
 const userPosts = JSON.parse(getCookie('userPosts'))
 const container = document.querySelector('.posts-container')
-console.log(container)
 console.table(userPosts)
 
 
 userPosts.forEach((post, i) => {
-container.innerHTML += `<img src="${post.image}">`
-})
+	container.innerHTML += `
+	<section class="user-item">
+	<img class="user-image" src="${post.image}"/>
+	<p>${post.description}</p>
+	<p>${post.created_at}</p>
+	</section>
+	`
+	})
