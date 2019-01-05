@@ -2,10 +2,10 @@ url = 'http://localhost:8888/app/posts/api.php'
 c_url = 'http://localhost:8888/app/posts/comments_api.php'
 const container = document.querySelector('.posts-container')
 
-const  getUser = (name) => {
-  var value = "; " + document.cookie
-  var parts = value.split("; " + name + "=")
-  if (parts.length == 2) return parts.pop().split(";").shift()
+const getUser = (name) => {
+	var value = "; " + document.cookie
+	var parts = value.split("; " + name + "=")
+	if (parts.length == 2) return parts.pop().split(";").shift()
 }
 
 const createPost = (json) => {
@@ -43,18 +43,29 @@ const initEventListeners = (elts, callback) => {
 const handleClickComment = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "postId=" + postId
-	console.log('comment!' + postId)
-		setTimeout(() => {
-	fetch(c_url)
-		.then((resp) => resp.json())
-		.then((data) => {
-		const commentsSection = [...document.querySelectorAll('.comments-section')]
-		 const dbfilter = data => data.filter(comment => comment.post_id === commentsSection[0].dataset.id)
-console.log(dbfilter(data).forEach((comment) => {
-	console.log(comment)
-}))
-		})
+
+	setTimeout(() => {
+		fetch(c_url)
+			.then((resp) => resp.json())
+			.then((data) => {
+				const commentsSection = [...document.querySelectorAll('.comments-section')]
+				const filterfunc = data => data.filter(comments => comments.post_id === postId)
+				filterfunc(data).forEach(comment => {
+					console.log(event.target)
+					console.log(comment.content)
+				})
+
+				fetch(url)
+					.then((resp) => resp.json())
+					.then((data) => {
+						// console.log(getUser('user_id'))
+
+						const dbfilter = data => data.filter(user => user.user_id === getUser('user_id'))
+						// console.log(dbfilter(data)[0].username)
+					})
+			})
 	}, 40)
+
 }
 
 const handleClickLikes = (event) => {
@@ -77,8 +88,8 @@ fetch(url)
 	.then((data) => {
 		if (window.location.pathname === '/profile.php') {
 			let currentUser = getUser('user_id')
-			 const userfilter = data => data.filter(user => user.user_id === currentUser)
-				data = userfilter(data)
+			const userfilter = data => data.filter(user => user.user_id === currentUser)
+			data = userfilter(data)
 		}
 		createPost(data)
 		const buttons = document.querySelectorAll('.like')
