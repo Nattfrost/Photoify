@@ -24,18 +24,35 @@ const createPost = (json) => {
 		<button name="dislike" type="submit" data-id="${post.post_id}" class="like">dislike</button>
 		<p data-id="${post.post_id}" class="likes">${post.no_likes}</p>
 	</form>
+	<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
+
+	<div data-id="${post.post_id}" class="comments-container">
+
+	<button name="comment-button" type="submit" data-id="${post.post_id}" class="like">comment</button>
+	</form>
+	</div>
 	</section>
 	`
 	})
 }
 
-const initEventListeners = (elts) => {
+const initEventListeners = (elts, callback) => {
 	elts.forEach(el => {
-		el.addEventListener('click', handleClick)
+		el.addEventListener('click', callback)
 	})
 }
 
-const handleClick = (event) => {
+const createComment = (elts) => {
+	elts.forEach(el => {
+		el.innerHTML += `<p>farting is believing</p>`
+})
+}
+const handleClickComment = (event) => {
+	let postId = event.target.dataset.id
+	document.cookie = "postId=" + postId
+	console.log('comment!' + postId)
+}
+const handleClickLikes = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "like=" + postId
 	setTimeout(() => {
@@ -60,5 +77,9 @@ fetch(url)
 		}
 		createPost(data)
 		const buttons = document.querySelectorAll('.like')
-		initEventListeners(buttons)
+		initEventListeners(buttons, handleClickLikes)
+		const commentsContainer = document.querySelectorAll('.comments-container')
+		const commentButton = document.querySelectorAll('.comment-button')
+		initEventListeners(commentsContainer, handleClickComment)
+		createComment(commentsContainer)
 	})
