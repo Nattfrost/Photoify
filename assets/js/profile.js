@@ -43,29 +43,28 @@ const initEventListeners = (elts, callback) => {
 const handleClickComment = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "postId=" + postId
-
 	setTimeout(() => {
 		fetch(c_url)
 			.then((resp) => resp.json())
 			.then((data) => {
 				const commentsSection = [...document.querySelectorAll('.comments-section')]
-				const filterfunc = data => data.filter(comments => comments.post_id === postId)
-				filterfunc(data).forEach(comment => {
-					console.log(event.target)
-					console.log(comment.content)
+				const filterfunc = elts => elts.filter(el => el.dataset.id === postId)
+				const dbfilter = data => data.filter(comments => comments.post_id === postId)
+				dbfilter(data).forEach(comment => {
+				filterfunc(commentsSection).forEach(commentSection => {
+					console.log(commentSection)
+					commentSection.innerHTML += `<p> ${comment.content}</p>`
+					})
 				})
-
 				fetch(url)
 					.then((resp) => resp.json())
 					.then((data) => {
 						// console.log(getUser('user_id'))
-
 						const dbfilter = data => data.filter(user => user.user_id === getUser('user_id'))
-						// console.log(dbfilter(data)[0].username)
+						 console.log(dbfilter(data)[0].username)
 					})
 			})
 	}, 40)
-
 }
 
 const handleClickLikes = (event) => {
