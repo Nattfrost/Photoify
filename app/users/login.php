@@ -22,6 +22,7 @@ if (isset($_POST['username'], $_POST['password'])) {
 			'avatar' 	=> $user['avatar'],
 			'description' => $user['description']
 		];
+
 		redirect('/index.php');
 	}	else {
 		//not working??

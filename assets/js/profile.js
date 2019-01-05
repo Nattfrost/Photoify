@@ -1,6 +1,13 @@
 url = 'http://localhost:8888/app/posts/api.php'
 const container = document.querySelector('.posts-container')
 
+const  getUser = (name) => {
+  var value = "; " + document.cookie
+  var parts = value.split("; " + name + "=")
+  if (parts.length == 2) return parts.pop().split(";").shift()
+}
+
+
 const createPost = (json) => {
 	json.forEach((post) => {
 
@@ -43,19 +50,15 @@ const handleClick = (event) => {
 	}, 40)
 }
 
-
-
-
 fetch(url)
 	.then((resp) => resp.json())
 	.then((data) => {
 		if (window.location.pathname === '/profile.php') {
-			console.log('profile')
-			const dbfilter = data => data.filter(item => item.post_id === filterfunc(likes)[0].dataset.id)
-
+			let currentUser = getUser('user_id')
+			 const userfilter = data => data.filter(user => user.user_id === currentUser)
+				data = userfilter(data)
 		}
-		console.table(data)
 		createPost(data)
 		const buttons = document.querySelectorAll('.like')
-		initEventListeners(buttons);
+		initEventListeners(buttons)
 	})
