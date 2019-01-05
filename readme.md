@@ -20,14 +20,15 @@
   * [ ] rewrite verifyEmail to be dynamic with any value
 * [X] Added feed and user images
 * [X] create new posts with image and description
+* [X] dynamically filter own posts
+* [X] join user data with like and post data
+* [X] fetch into JS and present in same template literal.
+* [X] like and dislike posts
   * [ ] edit posts
   * [ ] delete posts
     * [X] encode all post data to json
     * [X] fetch the Json in js
-* [X] join user data with like and post data
-  * [X] fetch into JS and present in same template literal.
 * [ ] create a database function file with all sql commands
-* [ ] like and dislike posts
 * [ ] follow and unfollow other users
 * [ ] view a list of posts by users I follow
 * [ ] able to comment on a post
