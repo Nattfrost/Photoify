@@ -31,6 +31,14 @@ function getPosts($pdo) {
 	return $posts;
 }
 
+function getComments($pdo) {
+	$statement = $pdo->prepare("SELECT * FROM comments");
+	$statement->execute();
+	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+	$posts = json_encode($posts);
+	return $posts;
+}
+
 function getUserPosts($id, $pdo) {
 	$statement = $pdo->prepare("SELECT * FROM posts WHERE user_id= :user_id ORDER BY timestamp DESC");
 	$statement->bindParam(':user_id', $id, PDO::PARAM_STR);

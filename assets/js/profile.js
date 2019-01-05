@@ -1,4 +1,5 @@
 url = 'http://localhost:8888/app/posts/api.php'
+c_url = 'http://localhost:8888/app/posts/comments_api.php'
 const container = document.querySelector('.posts-container')
 
 const  getUser = (name) => {
@@ -6,12 +7,8 @@ const  getUser = (name) => {
   var parts = value.split("; " + name + "=")
   if (parts.length == 2) return parts.pop().split(";").shift()
 }
-
-
 const createPost = (json) => {
 	json.forEach((post) => {
-
-
 		container.innerHTML += `
 	<img class="avatar" src="${post.avatar}">
 	<p>${post.username}</p>
@@ -24,11 +21,12 @@ const createPost = (json) => {
 		<button name="dislike" type="submit" data-id="${post.post_id}" class="like">dislike</button>
 		<p data-id="${post.post_id}" class="likes">${post.no_likes}</p>
 	</form>
-	<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
 
 	<div data-id="${post.post_id}" class="comments-container">
-
-	<button name="comment-button" type="submit" data-id="${post.post_id}" class="like">comment</button>
+	<div class="comments-section"> </div>
+		<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
+		<input type="text" name="comment" placeholder="" required>
+			<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
 	</form>
 	</div>
 	</section>
@@ -47,11 +45,13 @@ const createComment = (elts) => {
 		el.innerHTML += `<p>farting is believing</p>`
 })
 }
+
 const handleClickComment = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "postId=" + postId
 	console.log('comment!' + postId)
 }
+
 const handleClickLikes = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "like=" + postId
@@ -67,6 +67,12 @@ const handleClickLikes = (event) => {
 	}, 40)
 }
 
+fetch(c_url)
+	.then((resp) => resp.json())
+	.then((data) => {
+	console.table(data)
+	})
+
 fetch(url)
 	.then((resp) => resp.json())
 	.then((data) => {
@@ -77,9 +83,11 @@ fetch(url)
 		}
 		createPost(data)
 		const buttons = document.querySelectorAll('.like')
+		const commentsContainer = [...document.querySelectorAll('.comments-container')]
+		const commentsSection = [...document.querySelectorAll('.comments-section')]
+		const commentButtons = [...document.querySelectorAll('.comment-button')]
+		createComment(commentsSection)
+		console.log(commentButtons)
 		initEventListeners(buttons, handleClickLikes)
-		const commentsContainer = document.querySelectorAll('.comments-container')
-		const commentButton = document.querySelectorAll('.comment-button')
-		initEventListeners(commentsContainer, handleClickComment)
-		createComment(commentsContainer)
+		initEventListeners(commentButtons, handleClickComment)
 	})
