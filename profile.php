@@ -27,6 +27,7 @@ require __DIR__.'/views/footer.php';
 require __DIR__.'/footer.php';
 ?>
 <?php $posts = getUserPosts($_SESSION['user']['id'], $pdo)?>
+<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
 <div class="posts-container">
 
 </div>

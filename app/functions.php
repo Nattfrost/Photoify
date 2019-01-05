@@ -39,7 +39,3 @@ function getUserPosts($id, $pdo) {
 	$posts = json_encode($posts);
 	return $posts;
 }
-
-function getLikes($id, $pdo) {
-
-}
