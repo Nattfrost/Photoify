@@ -28,10 +28,10 @@
   * [ ] delete posts
     * [X] encode all post data to json
     * [X] fetch the Json in js
-* [ ] create a database function file with all sql commands
 * [ ] follow and unfollow other users
 * [ ] view a list of posts by users I follow
-* [ ] able to comment on a post
+* [X] able to comment on a post
+			* [ ] fetch and match username with comments.
 * [ ] able to edit comments
 * [ ] able to delete comments
 * [ ] able to reply to comments
