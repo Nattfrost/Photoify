@@ -51,9 +51,12 @@ const handleClickComment = (event) => {
 				const filterfunc = elts => elts.filter(el => el.dataset.id === postId)
 				const dbfilter = data => data.filter(comments => comments.post_id === postId)
 				dbfilter(data).forEach(comment => {
-				filterfunc(commentsSection).forEach(commentSection => {
-					console.log(commentSection)
-					commentSection.innerHTML += `<p> ${comment.content}</p>`
+					filterfunc(commentsSection).forEach(commentSection => {
+						console.log(commentSection)
+						commentSection.innerHTML += `
+						<p class="username"></p>
+						<p class="comment"> ${comment.content}</p>
+						`
 					})
 				})
 				fetch(url)
@@ -61,7 +64,10 @@ const handleClickComment = (event) => {
 					.then((data) => {
 						// console.log(getUser('user_id'))
 						const dbfilter = data => data.filter(user => user.user_id === getUser('user_id'))
-						 console.log(dbfilter(data)[0].username)
+						const usernames = document.querySelectorAll('.username')
+						usernames.forEach(username => {
+							username.innerHTML += dbfilter(data)[0].username;
+						})
 					})
 			})
 	}, 40)
