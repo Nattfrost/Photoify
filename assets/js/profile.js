@@ -38,10 +38,6 @@ const getData = url => {
 		.then((resp) => resp.json())
 }
 
-getData(user_url)
-	.then(data => {
-
-	})
 const initEventListeners = (elts, callback) => {
 	elts.forEach(el => {
 		el.addEventListener('click', callback)

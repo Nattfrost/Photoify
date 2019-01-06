@@ -35,7 +35,7 @@ function getComments($pdo) {
 	$statement = $pdo->prepare("SELECT * FROM comments");
 	$statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-	$posts = json_encode($posts);
+	$posts = json_encode(array('comments' => $posts));
 	return $posts;
 }
 
