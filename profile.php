@@ -31,3 +31,4 @@ $currentUser = setcookie('user_id', strval($_SESSION['user']['id'])) ?>
 <div class="posts-container">
 </div>
 <script type="text/javascript" src="assets/js/profile.js"></script>
+<script type="text/javascript" src="assets/js/test.js"></script>

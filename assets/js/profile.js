@@ -1,5 +1,5 @@
-url = 'http://localhost:8888/app/posts/api.php'
-c_url = 'http://localhost:8888/app/posts/comments_api.php'
+user_url = 'http://localhost:8888/app/posts/api.php'
+comment_url = 'http://localhost:8888/app/posts/comments_api.php'
 const container = document.querySelector('.posts-container')
 
 const getUser = (name) => {
@@ -33,7 +33,15 @@ const createPost = (json) => {
 	`
 	})
 }
+const getData = url => {
+	return fetch(url)
+		.then((resp) => resp.json())
+}
 
+getData(user_url)
+	.then(data => {
+
+	})
 const initEventListeners = (elts, callback) => {
 	elts.forEach(el => {
 		el.addEventListener('click', callback)
@@ -44,25 +52,21 @@ const handleClickComment = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "postId=" + postId
 	setTimeout(() => {
-		fetch(c_url)
-			.then((resp) => resp.json())
-			.then((data) => {
+		getData(comment_url)
+			.then(data => {
 				const commentsSection = [...document.querySelectorAll('.comments-section')]
 				const filterfunc = elts => elts.filter(el => el.dataset.id === postId)
 				const dbfilter = data => data.filter(comments => comments.post_id === postId)
 				dbfilter(data).forEach(comment => {
 					filterfunc(commentsSection).forEach(commentSection => {
-						console.log(commentSection)
 						commentSection.innerHTML += `
 						<p class="username"></p>
 						<p class="comment"> ${comment.content}</p>
 						`
 					})
 				})
-				fetch(url)
-					.then((resp) => resp.json())
-					.then((data) => {
-						// console.log(getUser('user_id'))
+				getData(user_url)
+					.then(data => {
 						const dbfilter = data => data.filter(user => user.user_id === getUser('user_id'))
 						const usernames = document.querySelectorAll('.username')
 						usernames.forEach(username => {
@@ -77,9 +81,8 @@ const handleClickLikes = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "like=" + postId
 	setTimeout(() => {
-		fetch(url)
-			.then((resp) => resp.json())
-			.then((data) => {
+		getData(user_url)
+			.then(data => {
 				const likes = [...document.querySelectorAll('.likes')]
 				const filterfunc = data => data.filter(item => item.dataset.id === event.target.dataset.id)
 				const dbfilter = data => data.filter(item => item.post_id === filterfunc(likes)[0].dataset.id)
@@ -88,9 +91,8 @@ const handleClickLikes = (event) => {
 	}, 40)
 }
 
-fetch(url)
-	.then((resp) => resp.json())
-	.then((data) => {
+getData(user_url)
+	.then(data => {
 		if (window.location.pathname === '/profile.php') {
 			let currentUser = getUser('user_id')
 			const userfilter = data => data.filter(user => user.user_id === currentUser)

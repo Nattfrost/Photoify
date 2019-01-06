@@ -24,6 +24,7 @@
 * [X] join user data with like and post data
 * [X] fetch into JS and present in same template literal.
 * [X] like and dislike posts
+* [ ] and getData and setData to send post request in js with fetch
   * [ ] edit posts
   * [ ] delete posts
     * [X] encode all post data to json
