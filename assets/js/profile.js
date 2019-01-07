@@ -94,7 +94,7 @@ getData(user_url)
 			const userfilter = data => data.filter(user => user.user_id === currentUser)
 			data = userfilter(data)
 		}
-		createPost(data)
+		console.log(data)
 		const buttons = document.querySelectorAll('.like')
 		const commentsContainer = [...document.querySelectorAll('.comments-container')]
 		const commentButtons = [...document.querySelectorAll('.comment-button')]

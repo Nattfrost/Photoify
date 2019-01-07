@@ -30,5 +30,5 @@ $currentUser = setcookie('user_id', strval($_SESSION['user']['id'])) ?>
 <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
 <div class="posts-container">
 </div>
-<script type="text/javascript" src="assets/js/profile.js"></script>
+<!-- <script type="text/javascript" src="assets/js/profile.js"></script> -->
 <script type="text/javascript" src="assets/js/test.js"></script>
