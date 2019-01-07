@@ -20,27 +20,28 @@ const initEventListeners = (elts, callback) => {
 
 const createPost = (json) => {
 
-	const commentMarkup = json.pop().comments.map(comment => {
-		return `<p data-id="${comment.post_id}">${comment.content}</p>`
+	const commentsMarkup = json.pop().comments.map(comment => {
+			
+		return `
+		<p data-id="${comment.post_id}">${comment.content}</p>
+		`
 	}).join('')
 	
-	const postMarkup = json.map(post => {
+	const postsMarkup = json.map(post => {
 		return `
-		<p data-id="${post.post_id}">${post.username}</p>
-		<img src="${post.image}"></img>`
-	}).join('')
+		<img src="${post.image}"></img>
+		<p>${commentsMarkup}</p>
+		`
 
-	console.log(postMarkup + commentMarkup)
-	container.innerHTML += (postMarkup + commentMarkup) ;
+	}).join('')
+	container.innerHTML = postsMarkup;
 }
 
 getData(url)
 	.then(data => {
-
 		if (window.location.pathname === '/profile.php') {
 			let currentUser = getUser('user_id')
 			const userfilter = data => data.posts.filter(user => user.user_id === currentUser)
 		}
 		createPost(data.posts)
-
 	})
