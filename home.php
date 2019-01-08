@@ -11,6 +11,6 @@ require __DIR__.'/footer.php';
 
 </div>
 <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
-<script type="text/javascript" src="assets/js/profile.js">
+<script type="text/javascript" src="assets/js/test.js">
 
 </script>
