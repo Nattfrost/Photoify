@@ -32,7 +32,7 @@
 * [ ] view a list of posts by users I follow
 * [X] able to comment on a post
     * [X] fetch and match username with comments.
-* [ ] able to edit comments
+* [ ] able to edit comments.
 * [ ] able to delete comments
 * [ ] able to reply to comments
 * [ ] able to add [filters](https://picturepan2.github.io/instagram.css/) to images
