@@ -7,9 +7,9 @@ require __DIR__.'/../../views/header.php';
              print_r($_COOKIE['postId']);
              $content = filter_var(trim($_POST['comment']), FILTER_SANITIZE_STRING);
              $created_at = date("Y-m-d");
-
-             $statement = $pdo->prepare('INSERT INTO comments (post_id, user_id, content, created_at)
-             VALUES (:post_id, :user_id, :content, :created_at)');
+             $author = $_SESSION['user']['username'];
+             $statement = $pdo->prepare('INSERT INTO comments (post_id, user_id, content, created_at, author)
+             VALUES (:post_id, :user_id, :content, :created_at, :author)');
 
              if (!$statement)
              {
@@ -17,6 +17,7 @@ require __DIR__.'/../../views/header.php';
              };
 
              $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
+             $statement->bindParam(':author', $author, PDO::PARAM_STR);
              $statement->bindParam(':user_id', $userId, PDO::PARAM_INT);
              $statement->bindParam(':content', $content, PDO::PARAM_STR);
              $statement->bindParam(':created_at', $created_at, PDO::PARAM_STR);

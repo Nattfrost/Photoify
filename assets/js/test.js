@@ -1,6 +1,6 @@
 let url = 'http://localhost:8888/app/posts/full_api.php'
 const container = document.querySelector('.posts-container')
-const commentSections = [...document.querySelectorAll('.comments-section')]
+// const commentSections = [...document.querySelectorAll('.comments-section')]
 
 const getData = url => {
 	return fetch(url)
@@ -45,11 +45,12 @@ const handleClickComment = (event) => {
 
 				dbfilter(data).forEach(comment => {
 					filterfunc(commentsSection).forEach(commentSection => {
+						console.log(commentSection)
 						const postComments = comment.comments.map(postComment => {
 
 							return `
-<p>${postComment.content}</p>
-`
+							<p><b class="author">${postComment.author}:</b> ${postComment.content}</p>
+							`
 						}).join('')
 						commentSection.innerHTML = postComments
 					})
@@ -58,39 +59,36 @@ const handleClickComment = (event) => {
 	}, 40)
 }
 
-
-
 const createPost = (json) => {
 	let posts = json
 
 	const postsMarkup = posts.map(post => {
 		const comments = post.comments.map(comment => {
-			return `<p>${comment.content}</p>`
+			return `<p><b class="author">${comment.author}:</b> ${comment.content}</p>`
 		}).join('')
-
 		return `
-<img class="avatar" src="${post.avatar}">
-<p>${post.username}</p>
-<section class="feed-item">
-<img class="feed-image" src="${post.image}"/>
-<p>${post.description}</p>
-<p>${post.created_at}</p>
-<form class="likes-form" action="../app/posts/likes.php" target="hiddenFrame" method="post">
-<button name="like" type="submit" data-id="${post.post_id}" class="like">like</button>
-<button name="dislike" type="submit" data-id="${post.post_id}" class="like">dislike</button>
-<p data-id="${post.post_id}" class="likes">likes: ${post.no_likes}</p>
-</form>
-<div data-id="${post.post_id}" class="comments-container">
-<div class="comments-section" data-id="${post.post_id}">
-${comments}
-</div>
-<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
-<input type="text" name="comment" placeholder="" required>
-<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
-</form>
-</div>
-</section>
-`
+		<img class="avatar" src="${post.avatar}">
+		<p>${post.username}</p>
+		<section class="feed-item">
+		<p class="description">${post.description}</p>
+		<p class="created-at text-uppercase">${post.created_at}</p>
+			<img class="feed-image" src="${post.image}" />
+			<form class="likes-form" action="../app/posts/likes.php" target="hiddenFrame" method="post">
+			<button name="like" type="submit" data-id="${post.post_id}" class="like like-button">like </button>
+				<button name="dislike" type="submit" data-id="${post.post_id}" class="like dislike-button">dislike</button>
+				<p data-id="${post.post_id}" class="likes">likes: ${post.no_likes}</p>
+			</form>
+			<div data-id="${post.post_id}" class="comments-container">
+				<div class="comments-section" data-id="${post.post_id}">
+					${comments}
+				</div>
+				<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
+					<input type="text" name="comment" placeholder="" required>
+					<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
+				</form>
+			</div>
+		</section>
+		`
 	}).join('')
 	container.innerHTML = postsMarkup
 }
@@ -104,9 +102,7 @@ getData(url)
 		}
 		createPost(data)
 		const buttons = document.querySelectorAll('.like')
-		const commentsContainer = [...document.querySelectorAll('.comments-container')]
 		const commentButtons = [...document.querySelectorAll('.comment-button')]
 		initEventListeners(buttons, handleClickLikes)
 		initEventListeners(commentButtons, handleClickComment)
-
 	})

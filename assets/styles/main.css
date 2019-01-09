@@ -5,9 +5,18 @@
   font-family: body-text;
   font-weight: 600;
   font-size: 12px;
-		list-style: none;
+  list-style: none;
 }
+body {
 
+}
+.author {
+  font-weight: 10;
+
+}
+.posts-container {
+  margin-bottom: 10vh;
+}
 .avatar {
 	width: 80px;
 	border-radius: 50%;
@@ -41,10 +50,39 @@ width: 100%;
 }
 
 .feed-item, .user-item{
-height: 80vh;
-border: solid grey 1px;
+min-height: 80vh;
+max-height: auto;
+
+}
+/* 
+.likes-form {
+display: inline-block;
 }
 
-.posts-container {
-	margin-bottom: 10vh;
+.like-button {
+display: inline-block;
 }
+
+.dislike-button {
+display: inline-block;
+}
+
+.likes {
+display: inline-block;
+}
+
+.comments-container {
+display: inline-block;
+}
+
+.comments-section {
+display: inline-block;
+}
+
+.comments-form {
+display: inline-block;
+}
+
+.comment-button {
+display: inline-block;
+} */

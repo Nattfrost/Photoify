@@ -15,7 +15,7 @@
   --success: whitesmoke;
   --failure: whitesmoke;
   --highlight: whitesmoke;
-  --text: whitesmoke;
+  --text: ;
   --text-faded: whitesmoke;
 
 		--transition-slow: .8s;
