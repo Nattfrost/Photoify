@@ -2,6 +2,23 @@ let url = 'http://localhost:8888/app/posts/full_api.php'
 const container = document.querySelector('.posts-container')
 const commentSections = [...document.querySelectorAll('.comments-section')]
 
+const getData = url => {
+	return fetch(url)
+		.then((resp) => resp.json())
+}
+
+const getUser = (name) => {
+	var value = "; " + document.cookie
+	var parts = value.split("; " + name + "=")
+	if (parts.length == 2) return parts.pop().split(";").shift()
+}
+
+const initEventListeners = (elts, callback) => {
+	elts.forEach(el => {
+		el.addEventListener('click', callback)
+	})
+}
+
 const handleClickLikes = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "like=" + postId
@@ -25,11 +42,16 @@ const handleClickComment = (event) => {
 				const commentsSection = [...document.querySelectorAll('.comments-section')]
 				const filterfunc = elts => elts.filter(el => el.dataset.id === postId)
 				const dbfilter = data => data.filter(comments => comments.post_id === postId)
+
 				dbfilter(data).forEach(comment => {
 					filterfunc(commentsSection).forEach(commentSection => {
-						commentSection.innerHTML += `
-						${comments}
-						`
+						const postComments = comment.comments.map(postComment => {
+
+							return `
+<p>${postComment.content}</p>
+`
+						}).join('')
+						commentSection.innerHTML = postComments
 					})
 				})
 			})
@@ -37,21 +59,7 @@ const handleClickComment = (event) => {
 }
 
 
-const getUser = (name) => {
-	var value = "; " + document.cookie
-	var parts = value.split("; " + name + "=")
-	if (parts.length == 2) return parts.pop().split(";").shift()
-}
 
-const getData = url => {
-	return fetch(url)
-		.then((resp) => resp.json())
-}
-const initEventListeners = (elts, callback) => {
-	elts.forEach(el => {
-		el.addEventListener('click', callback)
-	})
-}
 const createPost = (json) => {
 	let posts = json
 
@@ -61,28 +69,28 @@ const createPost = (json) => {
 		}).join('')
 
 		return `
-		<img class="avatar" src="${post.avatar}">
-		<p>${post.username}</p>
-		<section class="feed-item">
-		<img class="feed-image" src="${post.image}"/>
-		<p>${post.description}</p>
-		<p>${post.created_at}</p>
-		<form class="likes-form" action="../app/posts/likes.php" target="hiddenFrame" method="post">
-			<button name="like" type="submit" data-id="${post.post_id}" class="like">like</button>
-			<button name="dislike" type="submit" data-id="${post.post_id}" class="like">dislike</button>
-			<p data-id="${post.post_id}" class="likes">likes: ${post.no_likes}</p>
-		</form>
-		<div data-id="${post.post_id}" class="comments-container">
-		<div class="comments-section" data-id="${post.post_id}">
+<img class="avatar" src="${post.avatar}">
+<p>${post.username}</p>
+<section class="feed-item">
+<img class="feed-image" src="${post.image}"/>
+<p>${post.description}</p>
+<p>${post.created_at}</p>
+<form class="likes-form" action="../app/posts/likes.php" target="hiddenFrame" method="post">
+<button name="like" type="submit" data-id="${post.post_id}" class="like">like</button>
+<button name="dislike" type="submit" data-id="${post.post_id}" class="like">dislike</button>
+<p data-id="${post.post_id}" class="likes">likes: ${post.no_likes}</p>
+</form>
+<div data-id="${post.post_id}" class="comments-container">
+<div class="comments-section" data-id="${post.post_id}">
 ${comments}
-		</div>
-			<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
-			<input type="text" name="comment" placeholder="" required>
-				<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
-		</form>
-		</div>
-		</section>
-		`
+</div>
+<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
+<input type="text" name="comment" placeholder="" required>
+<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
+</form>
+</div>
+</section>
+`
 	}).join('')
 	container.innerHTML = postsMarkup
 }
