@@ -7,19 +7,20 @@
   font-size: 12px;
   list-style: none;
 }
-body {
 
-}
 .author {
   font-weight: 10;
 
 }
 .posts-container {
   margin-bottom: 10vh;
+  display: grid;
+  justify-content: center
 }
 .avatar {
 	width: 80px;
-	border-radius: 50%;
+	height: 80px;
+	border-radius: 100%;
 }
 .logo-text {
   font-family: instagram-logo;
@@ -46,26 +47,56 @@ body {
 }
 
 .feed-image, .user-image{
-width: 100%;
+height: 60vh;
 }
 
 .feed-item, .user-item{
 min-height: 80vh;
 max-height: auto;
+overflow: hidden;
 
 }
-/* 
+.feed-item {
+grid-column: 1; 
+}
+
 .likes-form {
-display: inline-block;
+border-bottom: #9A9A9A solid 1px;
 }
 
+.author-container {
+  display: flex;
+  margin-left: 6vw;
+  margin-right: 6vw;
+}
+.author-container p {
+  margin-left: 1vw;
+}
+
+.created-at {
+
+}
+.like-icon, .dislike-icon, .btn-wrapper {
+  height: 20px;
+  width: 20px;
+}
 .like-button {
-display: inline-block;
+  background-color: blue;
+}
+.hidden {
+  display: none;
+}
+.dislike-button {
+  background-color: red;
+
+}
+form.hide-submit input[type="submit"] { 
+  display: none;
 }
 
-.dislike-button {
-display: inline-block;
-}
+
+/* 
+
 
 .likes {
 display: inline-block;

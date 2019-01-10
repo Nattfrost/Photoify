@@ -33,7 +33,12 @@ function getUserPosts($id, $pdo) {
 }
 
 function getPosts($pdo) {
-    $statement = $pdo->prepare("SELECT * FROM posts, users WHERE users.id = posts.user_id ORDER BY timestamp DESC");
+	$statement = $pdo->prepare("SELECT posts.*, users.username, users.id, users.avatar, users.created_at, likes.has_liked FROM posts 
+	LEFT JOIN likes ON posts.post_id = likes.post_id AND likes.user_id = :user_id
+	INNER JOIN users ON posts.user_id = users.id
+	WHERE users.id = posts.user_id
+	ORDER BY timestamp desc");
+	$statement->bindParam(':user_id', $_SESSION['user']['id']);
     $statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
