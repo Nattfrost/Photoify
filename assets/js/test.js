@@ -102,7 +102,7 @@ const createPost = (json) => {
 		return `
 		<section class="feed-item">
 		<form class="deletePost-form" target="hiddenFrame" action="../app/posts/update.php" method="post">
-		<button name="deletePost" data-id="${post.user_id}" data-postid="${post.post_id}" class="delete-button" type="submit">Delete Post</button>
+		<button name="deletePost" data-id="${post.user_id}" data-postid="${post.post_id}" class="delete-button" type="submit">Delete Toast</button>
 		</form>
 	<div class="image-wrapper">
 		<img class="feed-image" src="${post.image}"/>
@@ -151,12 +151,20 @@ const createPost = (json) => {
 
 }
 
+const showPostContent = (e) => {
+	console.log(e.target)
+	const postContents = [...document.querySelectorAll('.post-footer')]
+	postContents.map(postContent => {
+		postContent.setAttribute('style', 'display: flex');
+	})
+}
 getData(url)
 	.then(data => {
 		if (window.location.pathname === '/profile.php') {
 			let currentUser = getUser('user_id')
 			const userfilter = data => data.filter(user => user.user_id === currentUser)
 			data = userfilter(data)
+	
 		}
 		createPost(data)
 		const buttons = document.querySelectorAll('.like')
@@ -169,6 +177,17 @@ getData(url)
 		initEventListeners(deleteButtons, handleClickDelete)
 		hideLikeButtons(data, likeButtons)
 		createDeleteButtons(deleteButtons)
+
+		if (window.location.pathname === '/profile.php') {
+			const postContents = [...document.querySelectorAll('.post-footer')]
+			postContents.map(postContent => {
+				postContent.setAttribute('style', 'display: none');
+			})
+			const profilePosts = [...document.querySelectorAll('.feed-image')]
+			profilePosts.map(profilePost  => {
+				initEventListeners(profilePosts, showPostContent)
+			})
+		}
 
 	})
 

@@ -122,6 +122,13 @@ form.hide-submit input[type="submit"] {
 transition: 0.4s;
 
 }
+.post-hidden {
+  height: 0;
+  displat: none!important;
+}
+post-visible {
+  height: auto;
+}
 .cog:hover {
 fill: black;
 transform: rotate(90deg);

@@ -10,7 +10,7 @@ require __DIR__.'/navbar.php';
 	<input type="file" name="image" id="image">
 	<textarea name="description" id="description" placeholder="description"></textarea>
 	<textarea name="tags" id="tags" placeholder="add tags"></textarea>
-	<button type="submit" class="">submit post</button>
+	<button type="submit" class="">Submit Toast</button>
 </form>
 
 
