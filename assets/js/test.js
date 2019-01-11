@@ -105,9 +105,9 @@ const createPost = (json) => {
 		<button name="deletePost" data-id="${post.user_id}" data-postid="${post.post_id}" class="delete-button" type="submit">Delete Toast</button>
 		</form>
 	<div class="image-wrapper">
-		<img class="feed-image" src="${post.image}"/>
+		<img data-id="${post.post_id}" class="feed-image" src="${post.image}"/>
 	</div>
-	<div class="post-footer">
+	<div data-id="${post.post_id}" class="post-footer">
 		
 		<form class="likes-form hide-submit" action="../app/posts/likes.php" target="hiddenFrame" method="post">
 		<label>
@@ -153,10 +153,14 @@ const createPost = (json) => {
 
 const showPostContent = (e) => {
 	console.log(e.target)
-	const postContents = [...document.querySelectorAll('.post-footer')]
+	let postContents = [...document.querySelectorAll('.post-footer')]
+	// currentPost = postContents.filter()
 	postContents.map(postContent => {
-		postContent.setAttribute('style', 'display: flex');
+		 posts = postContent.dataset.id
+		 const current = posts => posts.filter(post => post.dataset.id === e.target.dataset.id)
+		 current(postContents)[0].setAttribute('style', 'display: flex')
 	})
+
 }
 getData(url)
 	.then(data => {
@@ -184,9 +188,9 @@ getData(url)
 				postContent.setAttribute('style', 'display: none');
 			})
 			const profilePosts = [...document.querySelectorAll('.feed-image')]
-			profilePosts.map(profilePost  => {
-				initEventListeners(profilePosts, showPostContent)
-			})
+
+			initEventListeners(profilePosts, showPostContent)
+		
 		}
 
 	})
