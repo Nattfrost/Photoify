@@ -52,7 +52,7 @@ width: 100%;
 }
 
 .feed-item, .user-item{
-min-height: 80vh;
+min-height: 90vh;
 max-height: auto;
 overflow: hidden;
 
@@ -67,22 +67,28 @@ grid-column: 1;
 .likes-form {
 border-bottom: #9A9A9A solid 1px;
 }
+.likes-form p {
+  margin-bottom: 2vw;
+
+margin-left: 4vw;
+}
 
 .author-container {
   display: flex;
+  flex-direction: column;
   margin-left: 6vw;
   margin-right: 6vw;
 }
 .author-container p {
   margin-left: 1vw;
+  
 }
 
 .like-icon, .dislike-icon, .btn-wrapper, .cog{
   height: 20px;
   width: 20px;
-}
-.like-button {
-  background-color: blue;
+  margin-left: 4vw;
+  margin-top: 2vw;
 }
 .hidden {
   display: none;
@@ -121,6 +127,10 @@ fill: black;
 transform: rotate(90deg);
 transition: ease-in-out 0.4s;
 }
+
+.comments-section {
+margin-left: 4vw;
+}
 /* 
 
 
@@ -132,9 +142,6 @@ display: inline-block;
 display: inline-block;
 }
 
-.comments-section {
-display: inline-block;
-}
 
 .comments-form {
 display: inline-block;

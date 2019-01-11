@@ -23,7 +23,8 @@
 
 		--text-size-small: 8px;
 		--text-size-medium: 10px;
-		--text-size-large: 12px;
+    --text-size-large: 12px;
+    --size-mobile: 375px;
 }
 
 

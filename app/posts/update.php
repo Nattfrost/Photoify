@@ -21,4 +21,3 @@ if (isset($_POST['deletePost'])) {
 
     redirect('/');
 };
-

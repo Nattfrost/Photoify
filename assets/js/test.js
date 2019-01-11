@@ -85,7 +85,7 @@ const handleClickComment = (event) => {
 					})
 				})
 			})
-	}, 40)
+	}, 20)
 }
 const handleClickDelete = (event) => {
     let postId = event.target.dataset.postid

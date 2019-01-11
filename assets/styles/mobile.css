@@ -1,12 +1,27 @@
-@media screen and (max-width: 600px) {
-    .image-wrapper {
-       width: 100vw !important;
-       height: 100vw !important;
-        border: #9F9F9F solid 1px;
-        
-      }
-      .feed-image, .user-image{
-        width: 100%;
-        height: auto;
-        }
+@media screen and (max-width: 380px) {
+  
+  :root {
+    --size-mobile: 375px;
+}
+
+.feed-item {
+  width: var(--size-mobile);
+  min-width: var(--size-mobile);
+  min-height: 90vh;
+  height: auto;
+  max-height: auto;
+
+}
+.feed-image  {
+  width: var(--size-mobile);
+  min-width: var(--size-mobile);
+  max-height: var(--size-mobile);
+  height: auto;
+
+}
+.image-wrapper {
+  max-height: var(--size-mobile);
+  height: var(--size-mobile);
+  min-height: var(--size-mobile);
+}
 }
