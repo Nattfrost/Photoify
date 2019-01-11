@@ -87,7 +87,11 @@ const handleClickComment = (event) => {
 			})
 	}, 40)
 }
-
+const handleClickDelete = (event) => {
+    let postId = event.target.dataset.postid
+	document.cookie = "delete=" + postId
+	window.location.reload()
+}
 const createPost = (json) => {
 	let posts = json
 	const postsMarkup = posts.map(post => {
@@ -97,9 +101,11 @@ const createPost = (json) => {
 
 		return `
 		<section class="feed-item">
-		<p data-id="${post.user_id}" class="delete-button">DELETE POST</p>
+		<form class="deletePost-form" target="hiddenFrame" action="../app/posts/update.php" method="post">
+		<button name="deletePost" data-id="${post.user_id}" data-postid="${post.post_id}" class="delete-button" type="submit">Delete Post</button>
+		</form>
 	<div class="image-wrapper">
-		<img class="feed-image" src="${post.image}" />
+		<img class="feed-image" src="${post.image}"/>
 	</div>
 	<div class="post-footer">
 		
@@ -160,8 +166,10 @@ getData(url)
 		const commentButtons = [...document.querySelectorAll('.comment-button')]
 		initEventListeners(buttons, handleClickLikes)
 		initEventListeners(commentButtons, handleClickComment)
+		initEventListeners(deleteButtons, handleClickDelete)
 		hideLikeButtons(data, likeButtons)
 		createDeleteButtons(deleteButtons)
+
 	})
 
 
