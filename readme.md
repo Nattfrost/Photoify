@@ -45,8 +45,8 @@
 * [ ] add toggle for Explore // Filtered
 
 # Back-log
-~~rewrite verifyEmail to be dynamic with any value~~
-~~able to reply to comments~~
-~~able to delete account along with all posts and comments~~
-~~able to reset password with email~~
-~~able to view posts with a specific **hashtag** in the description~~
+~~rewrite verifyEmail to be dynamic with any value~~  
+~~able to reply to comments~~  
+~~able to delete account along with all posts and comments~~  
+~~able to reset password with email~~  
+~~able to view posts with a specific **hashtag** in the description~~  
