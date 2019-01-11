@@ -17,7 +17,6 @@
 * [X] edit account details, password and biography
   * [X] change email
   * [X] check if email is taken
-  * [ ] rewrite verifyEmail to be dynamic with any value
 * [X] Added feed and user images
 * [X] create new posts with image and description
 * [X] dynamically filter own posts
@@ -25,7 +24,7 @@
 * [X] fetch into JS and present in same template literal.
 * [X] like and dislike posts
   * [ ] edit posts
-  * [ ] delete posts
+  * [X] delete posts
     * [X] encode all post data to json
     * [X] fetch the Json in js
 * [ ] follow and unfollow other users
@@ -34,17 +33,20 @@
     * [X] fetch and match username with comments.
 * [ ] able to edit comments.
 * [ ] able to delete comments
-* [ ] able to reply to comments
-* [ ] able to add [filters](https://picturepan2.github.io/instagram.css/) to images
-* [ ] able to delete account along with all posts and comments
-* [ ] able to reset password with email
-* [ ] able to view posts with a specific **hashtag** in the description
 
 # Front-end
 * [X] wireframes
   * [X] choose fonts  
   * [X] basic layout in figma  
+* [ ] able to add [filters](https://picturepan2.github.io/instagram.css/) to images
 * [ ] create css variables for fonts, spaces, padding/margin, and colors
 * [ ] setup mediaquerys early so it's responsive from the start // Decide what content is shown when
 * [ ] create concept for '#-filter view'
 * [ ] add toggle for Explore // Filtered
+
+# Back-log
+~~rewrite verifyEmail to be dynamic with any value~~
+~~able to reply to comments~~
+~~able to delete account along with all posts and comments~~
+~~able to reset password with email~~
+~~able to view posts with a specific **hashtag** in the description~~
