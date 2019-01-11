@@ -5,7 +5,9 @@
 <?php redirect('/login.php'); ?>
 
 <?php endif; ?>
-<?php if (isset($_SESSION['user'])): ?>
+<?php if (isset($_SESSION['user'])): 
+	$currentUser = setcookie('user_id', strval($_SESSION['user']['id']))?>
+
 	<p>Welcome, <?php echo $_SESSION['user']['firstname'].' '.$_SESSION['user']['lastname'] ?>!</p>
 <?php endif; ?>
 <?php require __DIR__.'/views/footer.php'; ?>

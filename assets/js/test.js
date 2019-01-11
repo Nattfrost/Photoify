@@ -1,19 +1,23 @@
 let url = 'http://localhost:8888/app/posts/full_api.php'
 const container = document.querySelector('.posts-container')
 
+const hideLikeButtons = (json, elts) => json.map(post => {
+	const buttons = elts.filter(el => el.dataset.id === post.post_id)
+	if (post.has_liked) {
+		buttons.map(button => {
+			button.classList.toggle('hidden')
 
-
-
-const hideButtons = (json, elts) => json.map(post => {
-const buttons = elts.filter(el => el.dataset.id === post.post_id)
-if (post.has_liked) {
-buttons.map(button => {
-	button.classList.toggle('hidden')
+		})
+	}
 
 })
+const createDeleteButtons = (elts) => {
+	elts.map(el => {
+		if	(el.dataset.id !== getUser('user_id'))
+		el.classList.add('hidden')
+		
+	})
 }
-
-})
 
 const getData = url => {
 	return fetch(url)
@@ -43,7 +47,7 @@ const handleClickLikes = (event) => {
 				const filterfunc = data => data.filter(item => item.dataset.id === event.target.dataset.id)
 				const dbfilter = data => data.filter(item => item.post_id === filterfunc(likes)[0].dataset.id)
 				filterfunc(likes)[0].innerHTML = 'likes: ' + dbfilter(data)[0].no_likes
-				
+
 
 				const likeButtons = [...document.querySelectorAll('.like-icon')]
 				let currentbuttons = filterfunc(likeButtons)
@@ -73,11 +77,11 @@ const handleClickComment = (event) => {
 							`
 						}).join('')
 						commentSection.innerHTML = postComments
-						
-                       commentsInputs.forEach(commentInput => {
-					   commentInput.value = '';
-					   
-					})
+
+						commentsInputs.forEach(commentInput => {
+							commentInput.value = '';
+
+						})
 					})
 				})
 			})
@@ -93,9 +97,12 @@ const createPost = (json) => {
 
 		return `
 		<section class="feed-item">
+		<p data-id="${post.user_id}" class="delete-button">DELETE POST</p>
+	<div class="image-wrapper">
 		<img class="feed-image" src="${post.image}" />
-
-
+	</div>
+	<div class="post-footer">
+		
 		<form class="likes-form hide-submit" action="../app/posts/likes.php" target="hiddenFrame" method="post">
 		<label>
 			<input name="like" type="submit" data-id="${post.post_id}" class="like like-button" />
@@ -115,7 +122,6 @@ const createPost = (json) => {
 			<p data-id="${post.post_id}" class="likes">likes: ${post.no_likes}</p>
 		</form>
 
-
 		<div class="author-container">
 			<img class="avatar" src="${post.avatar}">
 			<p>${post.username} </p> 
@@ -126,6 +132,7 @@ const createPost = (json) => {
 				<div class="comments-section" data-id="${post.post_id}">
 					${comments}
 				</div>
+	</div>
 				<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
 					<input type="text" name="comment" placeholder="" class="comments-input" required>
 					<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
@@ -133,8 +140,7 @@ const createPost = (json) => {
 			</div>
 		</section>
 		`
-}
-	).join('')
+	}).join('')
 	container.innerHTML = postsMarkup
 
 }
@@ -147,19 +153,20 @@ getData(url)
 			data = userfilter(data)
 		}
 		createPost(data)
-		const likeButtons = [...document.querySelectorAll('.like-icon')]
-
 		const buttons = document.querySelectorAll('.like')
+		const likeButtons = [...document.querySelectorAll('.like-icon')]
+		const deleteButtons = [...document.querySelectorAll('.delete-button')]
+
 		const commentButtons = [...document.querySelectorAll('.comment-button')]
 		initEventListeners(buttons, handleClickLikes)
 		initEventListeners(commentButtons, handleClickComment)
-		hideButtons(data, likeButtons)
-
+		hideLikeButtons(data, likeButtons)
+		createDeleteButtons(deleteButtons)
 	})
 
 
 
 
-	//if user has liked
-	//store true or false
-	//div onload add class depending on true or false
+//if user has liked
+//store true or false
+//div onload add class depending on true or false

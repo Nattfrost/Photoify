@@ -37,7 +37,7 @@
 * [ ] able to reply to comments
 * [ ] able to add [filters](https://picturepan2.github.io/instagram.css/) to images
 * [ ] able to delete account along with all posts and comments
-* [ ] able to resetting password with email
+* [ ] able to reset password with email
 * [ ] able to view posts with a specific **hashtag** in the description
 
 # Front-end

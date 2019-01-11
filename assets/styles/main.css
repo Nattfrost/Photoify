@@ -47,7 +47,8 @@
 }
 
 .feed-image, .user-image{
-height: 60vh;
+height: 100%;
+width: 100%;
 }
 
 .feed-item, .user-item{
@@ -57,6 +58,9 @@ overflow: hidden;
 
 }
 .feed-item {
+  max-width: 60vw;
+  min-width: 600px;
+
 grid-column: 1; 
 }
 
@@ -73,10 +77,7 @@ border-bottom: #9A9A9A solid 1px;
   margin-left: 1vw;
 }
 
-.created-at {
-
-}
-.like-icon, .dislike-icon, .btn-wrapper {
+.like-icon, .dislike-icon, .btn-wrapper, .cog{
   height: 20px;
   width: 20px;
 }
@@ -94,7 +95,32 @@ form.hide-submit input[type="submit"] {
   display: none;
 }
 
+.post-footer {
+  display: flex;
+  flex-direction: column;
+}
 
+.image-wrapper {
+  max-width: 60vw;
+  min-width: 600px;
+  max-height: 60vw;
+  min-height: 600px;
+  border: #9F9F9F solid 1px;
+  
+}
+.cog {
+  position: absolute;
+ right: 4vh;
+ top: 4vh;
+ fill:white;
+transition: 0.4s;
+
+}
+.cog:hover {
+fill: black;
+transform: rotate(90deg);
+transition: ease-in-out 0.4s;
+}
 /* 
 
 
