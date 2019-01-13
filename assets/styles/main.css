@@ -138,9 +138,32 @@ transition: ease-in-out 0.4s;
 .comments-section {
 margin-left: 4vw;
 }
+.image-wrapper {
+  max-width: 60vw;
+  min-width: 600px;
+  max-height: 60vw;
+  min-height: 600px;
+}
+
+.feed-image, .user-image{
+height: 100%;
+width: 100%;
+}
+
+.feed-item, .user-item{
+min-height: 90vh;
+max-height: auto;
+overflow: hidden;
+
+}
+.feed-item {
+  max-width: 60vw;
+  min-width: 600px;
+
+grid-column: 1; 
+}
+
 /* 
-
-
 .likes {
 display: inline-block;
 }
@@ -156,4 +179,4 @@ display: inline-block;
 
 .comment-button {
 display: inline-block;
-} */
+} */ */

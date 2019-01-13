@@ -21,11 +21,11 @@ require __DIR__.'/navbar.php';
 	</div>
 </form>
 
+<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+<div class="posts-container">
+</div>
+
 <?php
 require __DIR__.'/views/footer.php';
 require __DIR__.'/footer.php';
 ?>
-<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
-<div class="posts-container">
-</div>
-<script type="text/javascript" src="assets/js/test.js"></script>

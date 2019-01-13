@@ -1,7 +1,7 @@
 @media screen and (max-width: 380px) {
   
-  :root {
-    --size-mobile: 375px;
+:root {
+--size-mobile: 375px;
 }
 
 .feed-item {
@@ -23,5 +23,6 @@
   max-height: var(--size-mobile);
   height: var(--size-mobile);
   min-height: var(--size-mobile);
+	}
 }
-}
+
