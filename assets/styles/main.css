@@ -27,11 +27,12 @@
 .logo-text {
 	font-family: instagram-logo;
 	font-weight: 10;
+  margin: 0;
 }
 
 .logo-container {
 	width: 30px;
-	height: 30px;
+  height: 30px;
 }
 
 .text-regular {
@@ -102,8 +103,6 @@
 .cog {
 	height: 20px;
 	width: 20px;
-	margin-left: 4vw;
-	margin-top: 2vw;
 }
 
 .hidden {
@@ -181,4 +180,27 @@ post-visible {
 	max-width: 60vw;
 	min-width: 600px;
 	grid-column: 1;
+}
+
+.deletepost-form{
+  position: absolute;
+	margin-left: 8px;
+  margin-top: 8px;
+
+
+}
+
+
+.header .logo-container:first-child , .footer-nav-container a:first-child {
+	margin-left: 2vh;
+}
+.footer-nav-container a:last-child, .cog{
+	margin-right: 2vh;
+}
+.header .logo-container:first-child {
+	margin-top: 2vh;
+}
+
+.deletepost, [type="button"], [type="reset"], [type="submit"] {
+
 }

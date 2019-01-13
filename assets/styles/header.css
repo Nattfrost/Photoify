@@ -12,6 +12,8 @@
 	font-family: body-text;
 	font-stretch: 100%;
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	flex-direction: row;
 	flex-shrink: 0; 
 	border-bottom-color: rgba(0, 0, 0, 0.098);

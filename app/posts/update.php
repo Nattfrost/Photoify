@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__.'/../../views/header.php';
 
-if (isset($_POST['deletePost'])) {
+if (isset($_POST['deletepost'])) {
     
     $postId = $_COOKIE['delete'];
 

@@ -101,8 +101,8 @@ const createPost = (json) => {
 
 		return `
 <section class="feed-item">
-	<form class="deletePost-form" target="hiddenFrame" action="../app/posts/update.php" method="post">
-		<button name="deletePost" data-id="${post.user_id}" data-postid="${post.post_id}" class="delete-button" type="submit">Delete Toast</button>
+	<form class="deletepost-form" target="hiddenFrame" action="../app/posts/update.php" method="post">
+		<button name="deletepost" data-id="${post.user_id}" data-postid="${post.post_id}" class="delete-button" type="submit">Delete Toast</button>
 	</form>
 		<div class="image-wrapper">
 		<img data-id="${post.post_id}" class="feed-image" src="${post.image}"/>
