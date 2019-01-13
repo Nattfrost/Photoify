@@ -3,21 +3,17 @@
 	bottom: 0;
 }
 
-
 .header, .footer-nav-container {
 	background-color: whitesmoke;
 	z-index: 1;
 	width: 100vw;
-	height: 10vh;
+	height: 8vh;
 	box-sizing: border-box;
 	font-family: body-text;
 	font-stretch: 100%;
-
-	align-items: center;
 	display: flex;
 	flex-direction: row;
-	flex-shrink: 0;
-
+	flex-shrink: 0; 
 	border-bottom-color: rgba(0, 0, 0, 0.098);
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
@@ -35,14 +31,4 @@
 	border-top-style: solid;
 	border-top-width: 0px;
 }
-path
-{
-	transform: scale(.5);
-}
-.logo-container , .logo-text{
-	align-self: flex-start;
-}
-.logo-container {
-	margin-left: 10%;
-	margin-top: 5px;
-}
+
