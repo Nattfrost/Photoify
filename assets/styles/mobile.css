@@ -23,6 +23,10 @@
   max-height: var(--size-mobile);
   height: var(--size-mobile);
   min-height: var(--size-mobile);
-	}
+  }
+  .comments-section {
+
+    height: 12vh;
+}
 }
 

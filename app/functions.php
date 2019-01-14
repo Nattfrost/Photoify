@@ -23,21 +23,12 @@ function verifyEmail(string $email, $pdo) {
 	return $user;
 };
 
-function getUserPosts($id, $pdo) {
-	$statement = $pdo->prepare("SELECT * FROM posts WHERE user_id= :user_id ORDER BY timestamp DESC");
-	$statement->bindParam(':user_id', $id, PDO::PARAM_STR);
-	$statement->execute();
-	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-	$posts = json_encode($posts);
-	return $posts;
-}
-
 function getPosts($pdo) {
 	$statement = $pdo->prepare("SELECT posts.*, users.username, users.id, users.avatar, users.created_at, likes.has_liked FROM posts 
 	LEFT JOIN likes ON posts.post_id = likes.post_id AND likes.user_id = :user_id
 	INNER JOIN users ON posts.user_id = users.id
 	WHERE users.id = posts.user_id
-	ORDER BY timestamp desc");
+	ORDER BY timestamp DESC");
 	$statement->bindParam(':user_id', $_SESSION['user']['id']);
     $statement->execute();
 	$posts = $statement->fetchAll(PDO::FETCH_ASSOC);

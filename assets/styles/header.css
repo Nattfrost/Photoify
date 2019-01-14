@@ -1,6 +1,6 @@
 .footer-nav-container{
 	position: fixed;
-	bottom: 0;
+	bottom: 0!important;
 }
 
 .header, .footer-nav-container {

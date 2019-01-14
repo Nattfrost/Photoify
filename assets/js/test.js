@@ -11,7 +11,6 @@ const hideLikeButtons = (json, elts) => json.map(post => {
 
 })
 
-
 const createDeleteButtons = (elts) => {
 	elts.map(el => {
 		if (el.dataset.id !== getUser('user_id'))
@@ -142,7 +141,7 @@ const createPost = (json) => {
 			${comments}
 			</div>
 			<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
-				<input type="text" name="comment" placeholder="" class="comments-input" required/>
+				<input type="text" name="comment" placeholder="Add a comment.." class="comments-input" required/>
 				<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
 			</form>
 		</div>
@@ -198,10 +197,3 @@ getData(url)
 		}
 
 	})
-
-
-
-
-//if user has liked
-//store true or false
-//div onload add class depending on true or false
