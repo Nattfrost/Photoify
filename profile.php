@@ -29,3 +29,4 @@ require __DIR__.'/navbar.php';
 require __DIR__.'/views/footer.php';
 require __DIR__.'/footer.php';
 ?>
+<script type="text/javascript" src="assets/js/test.js"></script>

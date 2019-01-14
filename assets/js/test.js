@@ -1,6 +1,5 @@
 let url = 'http://localhost:8888/app/posts/full_api.php'
 const container = document.querySelector('.posts-container')
-
 const hideLikeButtons = (json, elts) => json.map(post => {
 	const buttons = elts.filter(el => el.dataset.id === post.post_id)
 	if (post.has_liked) {
@@ -61,6 +60,7 @@ const handleClickLikes = (event) => {
 const handleClickComment = (event) => {
 	let postId = event.target.dataset.id
 	document.cookie = "postId=" + postId
+	// i should use async await
 	setTimeout(() => {
 		getData(url)
 			.then(data => {
@@ -143,8 +143,8 @@ const createPost = (json) => {
 </section>
 `
 	}).join('')
-	container.innerHTML = postsMarkup
 
+	container.innerHTML = postsMarkup
 }
 
 const showPostContent = (e) => {
