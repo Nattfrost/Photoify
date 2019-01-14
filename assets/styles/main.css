@@ -6,7 +6,9 @@
 	font-size: 12px;
 	list-style: none;
 }
-
+body {
+	background-color: whitesmoke;
+}
 .avatar {
 	width: 80px;
 	height: 80px;
@@ -43,23 +45,7 @@
 	font-size: 12px;
 }
 
-.feed-image,
-.user-image {
-	height: 100%;
-	width: 100%;
-}
 
-.feed-item,
-.user-item {
-height: 92vh;
-	overflow: hidden;
-}
-
-.feed-item {
-	max-width: 60vw;
-	min-width: 600px;
-	grid-column: 1;
-}
 
 .like-icon,
 .dislike-icon,

@@ -82,7 +82,6 @@ const handleClickComment = (event) => {
 						console.log(commentsInputs)
 						commentsInputs.forEach(commentInput => {
 							commentInput.value = '';
-
 						})
 					})
 				})

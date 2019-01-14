@@ -4,9 +4,10 @@
 }
 
 .author-container {
+    
 	display: grid;
     grid-template-columns: repeat(auto-fit, minmax(1x, 1fr));
-    grid-template-rows: 1 1 1 ;
+    grid-template-rows: repeat(auto-fit, minmax(1x, 1fr));
 }
 
 .author-container p {
@@ -33,9 +34,12 @@
 }
 
 .posts-container {
-	display: grid;
+    display: grid;
+    grid-auto-flow: unset;
     justify-content: center;
-    margin-bottom: 10vh;
+    margin-bottom: 8vh;
+    margin-top: 4vh;
+
 }
 
 .comments-container {
@@ -47,8 +51,8 @@
 .comments-form {
     height: 40px;
     display: flex;
-justify-content: space-between;
-align-items: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .comments-form input {

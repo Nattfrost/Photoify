@@ -7,7 +7,7 @@
 .feed-item {
   width: var(--size-mobile);
   min-width: var(--size-mobile);
-  min-height: 90vh;
+  /* min-height: 90vh; */
   height: auto;
   max-height: auto;
 
