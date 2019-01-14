@@ -34,3 +34,26 @@
 	border-top-width: 0px;
 }
 
+.feed-item {
+	border-bottom-color: rgba(0, 0, 0, 0.098);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-left-color: rgba(0, 0, 0, 0.098);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: rgba(0, 0, 0, 0.098);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: rgba(0, 0, 0, 0.098);
+	border-top-style: solid;
+	border-top-width: 1px;
+	margin-bottom: 4vh;
+
+}
+
+.comments-section {
+	border-bottom-color: rgba(0, 0, 0, 0.098);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	
+}

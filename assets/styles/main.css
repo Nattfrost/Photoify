@@ -7,17 +7,6 @@
 	list-style: none;
 }
 
-.author {
-	font-weight: 10;
-
-}
-
-.posts-container {
-	margin-bottom: 8vh;
-	display: grid;
-	justify-content: center
-}
-
 .avatar {
 	width: 80px;
 	height: 80px;
@@ -27,12 +16,12 @@
 .logo-text {
 	font-family: instagram-logo;
 	font-weight: 10;
-  margin: 0;
+	margin: 0;
 }
 
 .logo-container {
 	width: 30px;
-  height: 30px;
+	height: 30px;
 }
 
 .text-regular {
@@ -65,36 +54,13 @@
 	min-height: 90vh;
 	max-height: auto;
 	overflow: hidden;
-
+	border
 }
 
 .feed-item {
 	max-width: 60vw;
 	min-width: 600px;
-
 	grid-column: 1;
-}
-
-.likes-form {
-	border-bottom: #9A9A9A solid 1px;
-}
-
-.likes-form p {
-	margin-bottom: 2vw;
-
-	margin-left: 4vw;
-}
-
-.author-container {
-	display: flex;
-	flex-direction: column;
-	margin-left: 6vw;
-	margin-right: 6vw;
-}
-
-.author-container p {
-	margin-left: 1vw;
-
 }
 
 .like-icon,
@@ -109,18 +75,8 @@
 	display: none;
 }
 
-.dislike-button {
-	background-color: red;
-
-}
-
 form.hide-submit input[type="submit"] {
 	display: none;
-}
-
-.post-footer {
-	display: flex;
-	flex-direction: column;
 }
 
 .image-wrapper {
@@ -141,7 +97,7 @@ form.hide-submit input[type="submit"] {
 	display: none !important;
 }
 
-post-visible {
+.post-visible {
 	height: auto;
 }
 
@@ -149,10 +105,6 @@ post-visible {
 	opacity: 1;
 	transform: rotate(90deg);
 	transition: ease-in-out 0.4s;
-}
-
-.comments-section {
-	margin-left: 4vw;
 }
 
 .image-wrapper {
@@ -173,7 +125,6 @@ post-visible {
 	min-height: 90vh;
 	max-height: auto;
 	overflow: hidden;
-
 }
 
 .feed-item {
@@ -182,46 +133,47 @@ post-visible {
 	grid-column: 1;
 }
 
-.deletepost-form{
-  position: absolute;
+.deletepost-form {
+	position: absolute;
 	margin-left: 8px;
-  margin-top: 8px;
-
-
+	margin-top: 8px;
 }
 
-
-.header .logo-container:first-child , .footer-nav-container a:first-child {
+.header .logo-container:first-child,
+.footer-nav-container a:first-child {
 	margin-left: 2vh;
 }
-.footer-nav-container a:last-child, .cog{
+
+.footer-nav-container a:last-child,
+.cog {
 	margin-right: 2vh;
 }
+
 .header .logo-container:first-child {
 	margin-top: 2vh;
 }
 
-/* .deletepost, [type="button"], [type="reset"], [type="submit"] {
-
-} */
-
-a {
-
-	text-decoration:none; 
-	color:inherit
-}
-
-
-input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
-    border-top-color: rgba(0,0,0,0);
-    border-right-color: rgba(0,0,0,0);
-    border-bottom-color: rgba(0,0,0,0);
-	border-left-color: rgba(0,0,0,0);
+input[type="button"i],
+input[type="submit"i],
+input[type="reset"i],
+input[type="file"i]::-webkit-file-upload-button,
+button {
+	border-top-color: rgba(0, 0, 0, 0);
+	border-right-color: rgba(0, 0, 0, 0);
+	border-bottom-color: rgba(0, 0, 0, 0);
+	border-left-color: rgba(0, 0, 0, 0);
 	background-color: whitesmoke;
-    border-style: solid;
-    border-width: 3px;
+	border-style: solid;
+	border-width: 3px;
 	padding: 1px 7px 2px;
 	font-family: body-text;
-	text-transform: uppercase!important;
+	text-transform: uppercase !important;
 	font-size: 10px;
+	text-decoration: none;
+	color: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }

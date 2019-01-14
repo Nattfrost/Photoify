@@ -10,6 +10,8 @@ const hideLikeButtons = (json, elts) => json.map(post => {
 	}
 
 })
+
+
 const createDeleteButtons = (elts) => {
 	elts.map(el => {
 		if (el.dataset.id !== getUser('user_id'))
@@ -78,6 +80,7 @@ const handleClickComment = (event) => {
 						}).join('')
 						commentSection.innerHTML = postComments
 
+						console.log(commentsInputs)
 						commentsInputs.forEach(commentInput => {
 							commentInput.value = '';
 
@@ -98,7 +101,7 @@ const createPost = (json) => {
 		const comments = post.comments.map(comment => {
 			return `<p><b class="author">${comment.author}:</b> ${comment.content}</p>`
 		}).join('')
-
+		
 		return `
 <section class="feed-item">
 	<form class="deletepost-form" target="hiddenFrame" action="../app/posts/update.php" method="post">
@@ -108,6 +111,8 @@ const createPost = (json) => {
 		<img data-id="${post.post_id}" class="feed-image" src="${post.image}"/>
 		</div>
 	<div data-id="${post.post_id}" class="post-footer">
+
+	<div class="likes-wrapper">
 		<form class="likes-form hide-submit" action="../app/posts/likes.php" target="hiddenFrame" method="post">
 			<label>
 			<input name="like" type="submit" data-id="${post.post_id}" class="like like-button" />
@@ -124,21 +129,25 @@ const createPost = (json) => {
 			</label>
 			<p data-id="${post.post_id}" class="likes">likes: ${post.no_likes}</p>
 		</form>
-		<div class="author-container">
-			<img class="avatar" src="${post.avatar}">
-			<p>${post.username} </p> 
-			<p class="description">${post.description}</p>
-			<p class="created-at text-uppercase">${post.created_at}</p>
 		</div>
-		<div data-id="${post.post_id}" class="comments-container">
+		<div class="author-container">
+
+				<img class="avatar" src="${post.avatar}">
+				<p class="post-author">${post.username} </p> 
+				<p class="description">${post.description}</p>
+				<p class="created-at text-uppercase">${post.timestamp}</p>
+		
+			<div data-id="${post.post_id}" class="comments-container">
 			<div class="comments-section" data-id="${post.post_id}">
 			${comments}
+			</div>
+			<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
+				<input type="text" name="comment" placeholder="" class="comments-input" required/>
+				<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
+			</form>
 		</div>
 		</div>
-		<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
-			<input type="text" name="comment" placeholder="" class="comments-input" required>
-			<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
-		</form>
+	
 		</div>
 </section>
 `
@@ -156,7 +165,6 @@ const showPostContent = (e) => {
 		const current = posts => posts.filter(post => post.dataset.id === e.target.dataset.id)
 		current(postContents)[0].setAttribute('style', 'display: flex')
 	})
-
 }
 getData(url)
 	.then(data => {
