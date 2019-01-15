@@ -66,11 +66,9 @@
 }
 
 .likes-form {
-    margin-top: .5rem;
-    margin-bottom: .5rem;
 	align-items: center;
 	display: flex;
-	border-bottom: #9A9A9A solid 1px;
+
 }
 .like-icon {
     margin-left: 1rem;
@@ -79,4 +77,14 @@
 .comments-section {
     overflow-y: scroll;
     height: 6vh;
+}
+.comments-section, .likes-form {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+	border-bottom-color: rgba(0, 0, 0, 0.098);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	
 }
