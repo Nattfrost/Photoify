@@ -3,10 +3,6 @@
 
 
 
-## Setup
-* [X] Setup file structure
-* [ ] look at heroku/netlify
-
 # Back-end
 * [X] create an account
   * [X] signup form
