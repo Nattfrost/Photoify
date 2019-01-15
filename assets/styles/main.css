@@ -17,10 +17,7 @@ body {
 	border-width: 1px;
 	border-radius: 100%;
 	margin-top: .5rem;
-
     margin-left: .5rem;
-
-
 }
 
 .logo-text {
@@ -53,8 +50,6 @@ body {
 	font-size: 12px;
 }
 
-
-
 .like-icon,
 .dislike-icon,
 .btn-wrapper,
@@ -76,7 +71,6 @@ form.hide-submit input[type="submit"] {
 	min-width: 600px;
 	max-height: 60vw;
 	min-height: 600px;
-
 }
 
 .cog {
