@@ -33,15 +33,15 @@
   * [X] basic layout in figma  
 
 # Back-log
-~~able to edit comments.~~
-~~able to delete comments~~
-~~follow and unfollow other users~~
-~~view a list of posts by users I follow~~
-~~able to add~~ [filters](https://picturepan2.github.io/instagram.css/) ~~to images~~
-~~create css variables for fonts, spaces, padding/margin, and colors~~
-~~setup mediaquerys early so it's responsive from the start // Decide what content is shown when~~
-~~create concept for '#-filter view'~~
-~~add toggle for Explore // Filtered~~
+~~able to edit comments.~~  
+~~able to delete comments~~  
+~~follow and unfollow other users~~  
+~~view a list of posts by users I follow~~  
+~~able to add~~ [filters](https://picturepan2.github.io/instagram.css/) ~~to images~~  
+~~create css variables for fonts, spaces, padding/margin, and colors~~  
+~~setup mediaquerys early so it's responsive from the start // Decide what content is shown when~~  
+~~create concept for '#-filter view'~~  
+~~add toggle for Explore // Filtered~~  
 ~~rewrite verifyEmail to be dynamic with any value~~  
 ~~able to reply to comments~~  
 ~~able to delete account along with all posts and comments~~  
