@@ -8,12 +8,11 @@ const hideLikeButtons = (json, elts) => json.map(post => {
 
 		})
 	}
-
 })
 
 const createDeleteButtons = (elts) => {
 	elts.map(el => {
-		if (el.dataset.id !== getUser('user_id'))
+		if (el.dataset.id !== getCookie('user_id'))
 			el.classList.add('hidden')
 
 	})
@@ -23,10 +22,10 @@ const getData = url => {
 	return fetch(url)
 		.then((resp) => resp.json())
 }
-
-const getUser = (name) => {
-	var value = "; " + document.cookie
-	var parts = value.split("; " + name + "=")
+//Get a cookie and filter the string to return the data we need
+const getCookie = (name) => {
+	let value = "; " + document.cookie
+	let parts = value.split("; " + name + "=")
 	if (parts.length == 2) return parts.pop().split(";").shift()
 }
 
@@ -143,7 +142,6 @@ const createPost = (json) => {
 			</form>
 		</div>
 		</div>
-	
 		</div>
 </section>
 `
@@ -165,10 +163,9 @@ const showPostContent = (e) => {
 getData(url)
 	.then(data => {
 		if (window.location.pathname === '/profile.php') {
-			let currentUser = getUser('user_id')
+			let currentUser = getCookie('user_id')
 			const userfilter = data => data.filter(user => user.user_id === currentUser)
 			data = userfilter(data)
-
 		}
 		createPost(data)
 		const buttons = document.querySelectorAll('.like')
@@ -190,7 +187,5 @@ getData(url)
 			const profilePosts = [...document.querySelectorAll('.feed-image')]
 
 			initEventListeners(profilePosts, showPostContent)
-
 		}
-
 	})

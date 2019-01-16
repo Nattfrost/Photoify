@@ -7,7 +7,7 @@ require __DIR__.'/navbar.php';
     <input class="file-input" type="file"  onchange="previewFile()" name="image" id="image" type="file" multiple="">
     <br>
     <div class="preview-wrapper">
-    <img class="preview-image" src="" height="200">
+    <img class="preview-image" src="">
     </div>
     <br>
     <div class="select-image-div">

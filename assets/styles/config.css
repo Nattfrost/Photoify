@@ -1,30 +1,32 @@
 @font-face {
-  font-family: 'instagram-logo';
-  src: url('../fonts/Pacifico.woff') format('woff') /* Pretty Modern Browsers */
+	font-family: 'instagram-logo';
+	src: url('../fonts/Pacifico.woff') format('woff')
+		/* Pretty Modern Browsers */
 }
+
 @font-face {
-  font-family: 'body-text';
-  src: url('../fonts/Proxima Nova.woff') format('woff') /* Pretty Modern Browsers */
+	font-family: 'body-text';
+	src: url('../fonts/Proxima Nova.woff') format('woff')
+		/* Pretty Modern Browsers */
 }
 
 
 /* create pallet here */
 :root {
-  --bg: whitesmoke;
-  --highlight: whitesmoke;
-  --success: whitesmoke;
-  --failure: whitesmoke;
-  --highlight: whitesmoke;
+	--bg: whitesmoke;
+	--highlight: whitesmoke;
+	--success: whitesmoke;
+	--failure: whitesmoke;
+	--highlight: whitesmoke;
 
 
-  --text-faded: whitesmoke;
+	--text-faded: whitesmoke;
 
-		--transition-slow: .8s;
-		--transition-fast: .4s;
+	--transition-slow: .8s;
+	--transition-fast: .4s;
 
-		--text-size-small: 8px;
-		--text-size-medium: 10px;
-    --text-size-large: 12px;
-    --size-mobile: 375px;
+	--text-size-small: 8px;
+	--text-size-medium: 10px;
+	--text-size-large: 12px;
+	--size-mobile: 375px;
 }
-

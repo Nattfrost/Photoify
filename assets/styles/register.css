@@ -1,7 +1,7 @@
 .form-container {
 	width: 100%;
 	display: flex;
-		justify-content: center;
+	justify-content: center;
 }
 
 
@@ -15,5 +15,5 @@
 }
 
 ::placeholder {
-text-align: center;
+	text-align: center;
 }

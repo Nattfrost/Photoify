@@ -1,39 +1,42 @@
 @media screen and (max-width: 380px) {
-  
-:root {
---size-mobile: 375px;
-}
 
-.feed-item {
-  width: var(--size-mobile);
-  min-width: var(--size-mobile);
-  /* min-height: 90vh; */
-  height: auto;
-  max-height: auto;
+	:root {
+		--size-mobile: 375px;
+	}
 
-}
-.feed-image  {
-  width: var(--size-mobile);
-  min-width: var(--size-mobile);
-  max-height: var(--size-mobile);
-  height: auto;
+	.feed-item {
+		width: var(--size-mobile);
+		min-width: var(--size-mobile);
+		/* min-height: 90vh; */
+		height: auto;
+		max-height: auto;
 
-}
-.image-wrapper {
-  max-height: var(--size-mobile);
-  height: var(--size-mobile);
-  min-height: var(--size-mobile);
-  }
-  .comments-section {
+	}
 
-    height: 12vh;
-}
-.preview-image {
-  width: var(--size-mobile);
-  min-width: var(--size-mobile);
-  max-height: var(--size-mobile);
-  height: var(--size-mobile);
-  
-}
-}
+	.feed-image {
+		width: var(--size-mobile);
+		min-width: var(--size-mobile);
+		max-height: var(--size-mobile);
+		height: auto;
 
+	}
+
+	.image-wrapper {
+		max-height: var(--size-mobile);
+		height: var(--size-mobile);
+		min-height: var(--size-mobile);
+	}
+
+	.comments-section {
+
+		height: 12vh;
+	}
+
+	.preview-image {
+		max-width: var(--size-mobile);
+		min-width: var(--size-mobile);
+		max-height: var(--size-mobile);
+		height: var(--size-mobile);
+
+	}
+}

@@ -6,9 +6,11 @@
 	font-size: 12px;
 	list-style: none;
 }
+
 body {
 	background-color: whitesmoke;
 }
+
 .avatar {
 	width: 80px;
 	height: 80px;
@@ -52,8 +54,7 @@ body {
 
 .like-icon,
 .dislike-icon,
-.btn-wrapper
-{
+.btn-wrapper {
 	height: 20px;
 	width: 20px;
 }
@@ -84,16 +85,18 @@ form.hide-submit input[type="submit"] {
 	height: auto;
 }
 
-.visible{
-	display: flex!important;
+.visible {
+	display: flex !important;
 }
+
 .image-wrapper {
 	max-width: 60vw;
 	min-width: 600px;
 	max-height: 60vw;
 	min-height: 600px;
 }
-.preview-image,
+
+
 .feed-image,
 .user-image {
 	height: 100%;
@@ -125,19 +128,23 @@ form.hide-submit input[type="submit"] {
 }
 
 .footer-nav-container a:last-child,
-{
+	{
 	margin-right: 2vh;
 }
 
 .header .logo-container:first-child {
 	margin-top: 2vh;
 }
+
 .upload-image,
 input[type="button"i],
 input[type="submit"i],
 input[type="reset"i],
 input[type="file"i]::-webkit-file-upload-button,
-button, textarea, select, input {
+button,
+textarea,
+select,
+input {
 	border-top-color: rgba(0, 0, 0, 0.098);
 	border-right-color: rgba(0, 0, 0, 0.098);
 	border-left-color: rgba(0, 0, 0, 0.098);
@@ -156,7 +163,11 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
-input, textarea, select, button {
+
+input,
+textarea,
+select,
+button {
 	text-rendering: auto;
 	color: initial;
 	letter-spacing: normal;
@@ -165,35 +176,51 @@ input, textarea, select, button {
 	text-indent: 0px;
 	text-shadow: none;
 	display: inline-block;
-	text-align: start!important;
+	text-align: start !important;
 	margin: 0em;
 	font: 400 11px system-ui;
 	font-family: body-text;
-  }
-  .file-input {
-	  display: none;
-  }
-  .comments-input {
+}
+
+.file-input {
+	display: none;
+}
+
+.comments-input {
 	border-top-color: rgba(0, 0, 0, 0);
 	border-right-color: rgba(0, 0, 0, 0);
 	border-left-color: rgba(0, 0, 0, 0);
 	border-style: groove;
-  }
+}
+
 .select-image-div,
 .user-info {
 	display: grid;
 	justify-content: center;
 }
+
 .post-form,
-.update-form{
-background-color: white;
+.update-form {
+	background-color: white;
 }
 
 .user-info {
 	padding-bottom: 4vh;
 }
-.preview-image{
-	border-bottom-color: rgba(0, 0, 0, 0.098);
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
+
+.preview-wrapper {
+
+	justify-content: center;
+	display: flex;
 }
+.preview-image {
+min-width: 400px;
+min-height: 400px;
+border-bottom-color: rgba(0, 0, 0, 0.098);
+border-top-color: rgba(0, 0, 0, 0.098);
+border-left-color: rgba(0, 0, 0, 0.098);
+border-right-color: rgba(0, 0, 0, 0.098);
+border-style: solid;
+border-width: 1px;
+}
+

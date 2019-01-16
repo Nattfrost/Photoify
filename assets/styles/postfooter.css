@@ -4,64 +4,75 @@
 }
 
 .author-container {
-    
+
 	display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(1x, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(1x, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(1x, 1fr));
+	grid-template-rows: repeat(auto-fit, minmax(1x, 1fr));
 }
 
 .author-container p {
-    margin-left: 1rem;
+	margin-left: 1rem;
 }
-.post-author, .description, .created-at{
 
-    grid-row: 1;
+.post-author,
+.description,
+.created-at {
+
+	grid-row: 1;
 }
-.description, .created-at{ 
-    margin-top: .25rem;
+
+.description,
+.created-at {
+	margin-top: .25rem;
 }
+
 .post-author {
-    font-size: 16px;
+	font-size: 16px;
 }
+
 .author {
-    font-weight: 10;
+	font-weight: 10;
 }
+
 .avatar {
-    grid-row: 1;
+	grid-row: 1;
 }
+
 .author-info {
 	display: flex;
 }
 
 .posts-container {
-    display: grid;
-    grid-auto-flow: unset;
-    justify-content: center;
-    margin-bottom: 8vh;
-    margin-top: 4vh;
+	display: grid;
+	grid-auto-flow: unset;
+	justify-content: center;
+	margin-bottom: 8vh;
+	margin-top: 4vh;
 
 }
 
 .comments-container {
-    grid-column: 1/5;
-    margin-top: 1rem;
+	grid-column: 1/5;
+	margin-top: 1rem;
 	display: flex;
 	flex-direction: column;
 }
+
 .comments-form {
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .comments-form input {
-    margin-left: 2rem;
+	margin-left: 2rem;
 
-    width: 40vw;
+	width: 40vw;
 }
+
 .comments-form button {
-    margin-right: 2rem;
+	margin-right: 2rem;
 
 }
 
@@ -70,21 +81,25 @@
 	display: flex;
 
 }
+
 .like-icon {
-    margin-left: 1rem;
+	margin-left: 1rem;
 
 }
+
 .comments-section {
-    overflow-y: scroll;
-    height: 6vh;
+	overflow-y: scroll;
+	height: 6vh;
 }
-.comments-section, .likes-form {
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+
+.comments-section,
+.likes-form {
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
 	border-bottom-color: rgba(0, 0, 0, 0.098);
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
-	
+
 }
