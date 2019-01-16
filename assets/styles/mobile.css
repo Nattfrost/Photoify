@@ -32,7 +32,8 @@
   width: var(--size-mobile);
   min-width: var(--size-mobile);
   max-height: var(--size-mobile);
-  height: auto;
+  height: var(--size-mobile);
+  
 }
 }
 

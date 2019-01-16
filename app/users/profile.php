@@ -16,7 +16,6 @@ if(isset($_POST['password'])) {
 	$username = ($_POST['username']) ? trim(filter_var($_POST['username'] , FILTER_SANITIZE_STRING)) : $user['username'];
 	$email = ($_POST['email']) ? trim(filter_var($_POST['email'] , FILTER_SANITIZE_EMAIL)) : $user['email'];
 	$image = ($_FILES['image']) ? $_FILES['image'] : $user['avatar'];
-	$bio = ($_POST['bio']) ? trim(filter_var($_POST['bio'], FILTER_SANITIZE_STRING)) : $user['bio'];
 	$password = $_POST['password'];
 	$errors = [];
 

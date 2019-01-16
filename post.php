@@ -23,3 +23,7 @@ require __DIR__.'/navbar.php';
 require __DIR__.'/views/footer.php';
 require __DIR__.'/footer.php';
 ?>
+
+
+
+

@@ -132,7 +132,7 @@ form.hide-submit input[type="submit"] {
 .header .logo-container:first-child {
 	margin-top: 2vh;
 }
-
+.upload-image,
 input[type="button"i],
 input[type="submit"i],
 input[type="reset"i],
@@ -179,4 +179,21 @@ input, textarea, select, button {
 	border-left-color: rgba(0, 0, 0, 0);
 	border-style: groove;
   }
+.select-image-div,
+.user-info {
+	display: grid;
+	justify-content: center;
+}
+.post-form,
+.update-form{
+background-color: white;
+}
 
+.user-info {
+	padding-bottom: 4vh;
+}
+.preview-image{
+	border-bottom-color: rgba(0, 0, 0, 0.098);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}

@@ -31,10 +31,10 @@ if(isset($_FILES['image'])) {
 	move_uploaded_file($image['tmp_name'], __DIR__.$destination);
 	$destination = '/app/uploads/' . $_SESSION['user']['id'] . '/posts/' . time() . '-' . $image['name'];
 
-	$statement = $pdo->prepare('INSERT INTO posts (user_id, description, tags, image, created_at)
-	VALUES (:user_id, :description, :tags, :image, :created_at)');
+	$statement = $pdo->prepare('INSERT INTO posts (user_id, tags, image, created_at)
+	VALUES (:user_id, :tags, :image, :created_at)');
 	$statement->bindParam(':user_id', $_SESSION['user']['id'], PDO::PARAM_INT);
-	$statement->bindParam(':description', $desc, PDO::PARAM_STR);
+
 	$statement->bindParam(':tags', $tags, PDO::PARAM_STR);
 	$statement->bindParam(':image', $destination, PDO::PARAM_STR);
 	$statement->bindParam(':created_at', $created_at, PDO::PARAM_STR);
