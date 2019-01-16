@@ -22,6 +22,8 @@ body {
 	font-family: instagram-logo;
 	font-weight: 10;
 	margin: 0;
+	margin-left: 2rem;
+
 }
 
 .logo-container {
@@ -50,8 +52,8 @@ body {
 
 .like-icon,
 .dislike-icon,
-.btn-wrapper,
-.cog {
+.btn-wrapper
+{
 	height: 20px;
 	width: 20px;
 }
@@ -71,10 +73,7 @@ form.hide-submit input[type="submit"] {
 	min-height: 600px;
 }
 
-.cog {
-	transition: 0.4s;
-	opacity: .5;
-}
+
 
 .post-hidden {
 	height: 0;
@@ -85,12 +84,9 @@ form.hide-submit input[type="submit"] {
 	height: auto;
 }
 
-.cog:hover {
-	opacity: 1;
-	transform: rotate(90deg);
-	transition: ease-in-out 0.4s;
+.visible{
+	display: flex!important;
 }
-
 .image-wrapper {
 	max-width: 60vw;
 	min-width: 600px;
@@ -129,7 +125,7 @@ form.hide-submit input[type="submit"] {
 }
 
 .footer-nav-container a:last-child,
-.cog {
+{
 	margin-right: 2vh;
 }
 
@@ -142,16 +138,15 @@ input[type="submit"i],
 input[type="reset"i],
 input[type="file"i]::-webkit-file-upload-button,
 button, textarea, select, input {
-	border-top-color: rgba(0, 0, 0, 0);
-	border-right-color: rgba(0, 0, 0, 0);
-	border-bottom-color: rgba(0, 0, 0, 0);
-	border-left-color: rgba(0, 0, 0, 0);
-	background-color: whitesmoke;
+	border-top-color: rgba(0, 0, 0, 0.098);
+	border-right-color: rgba(0, 0, 0, 0.098);
+	border-left-color: rgba(0, 0, 0, 0.098);
+	border-bottom-color: rgba(0, 0, 0, 0.098);
+	background-color: white;
 	border-style: solid;
-	border-width: 3px;
+	border-width: 1px;
 	padding: 1px 7px 2px;
 	font-family: body-text;
-	text-transform: uppercase !important;
 	font-size: 10px;
 	text-decoration: none;
 	color: inherit;
@@ -175,4 +170,12 @@ input, textarea, select, button {
 	font: 400 11px system-ui;
 	font-family: body-text;
   }
-  
+  .file-input {
+	  display: none;
+  }
+  .comments-input {
+	border-top-color: rgba(0, 0, 0, 0);
+	border-right-color: rgba(0, 0, 0, 0);
+	border-left-color: rgba(0, 0, 0, 0);
+	border-style: groove;
+  }
