@@ -46,3 +46,15 @@
 ~~able to delete account along with all posts and comments~~  
 ~~able to reset password with email~~  
 ~~able to view posts with a specific **hashtag** in the description~~  
+
+
+
+
+## Thanks to:
+- [Adrian Jungnelius](https://github.com/AdrianJung)
+- [Hanna Ell](https://github.com/hannaell)<br>
+for testing.
+
+
+## License
+MIT © [Nattfrost](https://github.com/Nattfrost)
