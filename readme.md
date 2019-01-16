@@ -19,7 +19,6 @@
 * [X] join user data with like and post data
 * [X] fetch into JS and present in same template literal.
 * [X] like and dislike posts
-  * [ ] edit posts
   * [X] delete posts
     * [X] encode all post data to json
     * [X] fetch the Json in js
@@ -33,6 +32,7 @@
   * [X] basic layout in figma  
 
 # Back-log
+~~edit posts~~  
 ~~able to edit comments.~~  
 ~~able to delete comments~~  
 ~~follow and unfollow other users~~  
