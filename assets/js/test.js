@@ -78,8 +78,6 @@ const handleClickComment = (event) => {
 							`
 						}).join('')
 						commentSection.innerHTML = postComments
-
-						console.log(commentsInputs)
 						commentsInputs.forEach(commentInput => {
 							commentInput.value = '';
 						})

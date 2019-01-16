@@ -15,13 +15,12 @@ require __DIR__.'/navbar.php';
 		<input type="text" name="username" id="username" value="<?= $_SESSION['user']['username']?>">
 		<input type="email" name="email" id="email" value="<?= $_SESSION['user']['email']?>">
 		<input type="file" name="image" id="image">
-		<textarea name="description" id="description" placeholder="<?= $_SESSION['user']['description']?>"></textarea>
 		<input type="password" name="password" id="password" placeholder="enter password">
 		<button type="submit" class="">Update profile</button>
 	</div>
 </form>
 
-<iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+<iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
 <div class="posts-container">
 </div>
 

@@ -93,7 +93,7 @@ form.hide-submit input[type="submit"] {
 	max-height: 60vw;
 	min-height: 600px;
 }
-
+.preview-image,
 .feed-image,
 .user-image {
 	height: 100%;
@@ -179,3 +179,4 @@ input, textarea, select, button {
 	border-left-color: rgba(0, 0, 0, 0);
 	border-style: groove;
   }
+
