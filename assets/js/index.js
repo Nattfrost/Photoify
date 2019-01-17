@@ -136,7 +136,7 @@ const createPost = (json) => {
 			<div class="comments-section" data-id="${post.post_id}">
 			${comments}
 			</div>
-			<form class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
+			<form autocomplete="off" class="comments-form" action="../app/posts/comments.php" target="hiddenFrame" method="post">
 				<input type="text" name="comment" placeholder="Add a comment.." class="comments-input" required/>
 				<button type="submit" data-id="${post.post_id}" class="comment-button">comment</button>
 			</form>

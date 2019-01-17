@@ -180,7 +180,12 @@ button {
 	margin: 0em;
 	font: 400 11px system-ui;
 	font-family: body-text;
+	
 }
+input[type="submit"]:focus,
+select:focus,
+button:focus,
+input:focus {outline:0;}
 
 .file-input {
 	display: none;
