@@ -96,7 +96,7 @@ const createPost = (json) => {
 		const comments = post.comments.map(comment => {
 			return `<p><b class="author">${comment.author}:</b> ${comment.content}</p>`
 		}).join('')
-		
+
 		return `
 <section class="feed-item">
 	<form class="deletepost-form" target="hiddenFrame" action="../app/posts/update.php" method="post">
