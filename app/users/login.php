@@ -22,7 +22,7 @@ if (isset($_POST['username'], $_POST['password'])) {
 			'avatar' 	=> $user['avatar']
 		];
 
-		redirect('/index.php');
+		redirect('/home.php');
 	}	else {
 		//not working??
 		$_SESSION['error'] = "wrong password!";

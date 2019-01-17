@@ -133,7 +133,7 @@ form.hide-submit input[type="submit"] {
 }
 
 .header .logo-container:first-child {
-	margin-top: 2vh;
+	margin-top: .7vh;
 }
 
 .upload-image,

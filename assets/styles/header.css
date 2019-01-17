@@ -10,7 +10,6 @@
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-	flex-shrink: 0;
 	border-bottom-color: rgba(0, 0, 0, 0.098);
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
